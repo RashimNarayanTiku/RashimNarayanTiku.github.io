@@ -1,4 +1,4 @@
-/* @import url(href://https://fonts.googleapis.com/css?family=monospace); */
+/* @import url(href://https://fonts.googleapis.com/css?family="monospaceFont"); */
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
 
 body {
@@ -39,7 +39,10 @@ body::-webkit-scrollbar {
     padding: 2% 0 0 2%;
     height: 100vh;
 }
-
+@font-face{
+    font-family: monospaceFont;
+    src:url(Cousine-Regular.ttf);
+}
 @font-face {
     font-family: ImpactFont;
     src: url(impact.ttf);
@@ -149,7 +152,7 @@ span {
 }
 
 .section-heading{
-    font-family: monospace, sans-serif;
+    font-family: "monospaceFont", sans-serif;
     font-size: 1.4em;
     color:rgb(196, 196, 196);
     margin-top: 5%;
@@ -176,7 +179,7 @@ span {
     margin-top: 4%;
 }
 .skill-outer h4{
-    font: 600 20px monospace;
+    font: 600 20px "monospaceFont", sans-serif;
 }
 .progress{
     width:90%;
@@ -368,13 +371,13 @@ color:#000;
     background: #000;
     border-radius: 2px;
     margin-top: 1%;
-    font-family: 'Roboto',sans-serif;
+    font-family: "monospaceFont",sans-serif;
 }
 
 .right {
     display: inline-block;
     color: rgb(177, 176, 176);
-    font-family: monospace;
+    font-family: "monospaceFont", sans-serif;
     padding: 30px 0px 0px 200px;
     /* width: 70%; */
     height: 50%;
@@ -387,7 +390,7 @@ color:#000;
   
 .left {
     display: inline-block;
-    font-family: monospace, sans-serif;
+    font-family: "monospaceFont", sans-serif;
     margin-top: 10%;
     width: 20%;
     height: 50%;
@@ -403,7 +406,7 @@ input[type="password"] {
   height: 32px;
   border: none;
   border-bottom: 1px solid #AAA;
-  font-family: monospace, sans-serif;
+  font-family: "monospaceFont", sans-serif;
   font-weight: 400;
   font-size: 20px;
   transition: 0.2s ease;
@@ -456,7 +459,7 @@ input[type="submit"]:active {
 }
 
 .copyright{
-    font-family: monospace;
+    font-family: "monospaceFont", sans-serif;
     margin-left: 40%;
     color:grey;
     background-color: black;
