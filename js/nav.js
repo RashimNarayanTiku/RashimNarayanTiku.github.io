@@ -43,9 +43,9 @@ $(function(){
 
 		// progress bar	
 		const progressbar = document.querySelector('#progressbar');
-		const heading = document.querySelector('#heading');
-		const headingtop = heading.getBoundingClientRect().top;
-		let progressValue = (0 - headingtop) / (heading.offsetHeight - window.innerHeight);
+		const page_content = document.querySelector('.page-content');
+		const headingtop = page_content.getBoundingClientRect().top;
+		let progressValue = (0 - headingtop) / (page_content.offsetHeight - window.innerHeight);
 		progressbar.style.transform = `scaleX(${progressValue})`;
 	});
 });

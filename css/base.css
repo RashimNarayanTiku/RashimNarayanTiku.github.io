@@ -81,7 +81,7 @@ body::-webkit-scrollbar {
 
 /* progress bar */
 #progressbar{
-    width: 100%;
+    width: 102%;
     height:1%;
     position:fixed;
     background-color: #585858;
@@ -459,6 +459,9 @@ input[type="submit"]:active {
 
 @media (max-width: 568px) {
 
+body{
+    overflow-x: hidden !important;
+}
 #sidebar {
     margin-left: -12rem;
 }
@@ -473,28 +476,37 @@ input[type="submit"]:active {
 span{
     padding:0.1%;
 }
+.skills{
+    margin:0 !important;
+}
 .skill-outer{
     width: 100% !important;
+    margin-right: 0 !important;
 }
 
 
 #heading{
-    height: 100vh !important;
+    height: 120vh !important;
     margin-top: 40% !important;
 }
 #name{
-    font-size: 150%;
+    font-size: 130%;
     display: inline-block;
     margin-bottom: 5%;
 }
 .social-links{
-    margin-top: -6% !important;
+    margin-top: -13% !important;
 }
+
 .home-header__title{
     font-size:620% !important;
 }
 .home-header__position{
-    margin-top: 5%;
+    margin-top: 10%;
+}
+
+home-header::after {
+    margin-top: 10%;
 }
 
 .right{
