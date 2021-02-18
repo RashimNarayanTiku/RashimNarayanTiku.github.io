@@ -456,6 +456,7 @@ input[type="submit"]:active {
 }
 
 
+
 @media (max-width: 568px) {
 
 #sidebar {
@@ -478,7 +479,7 @@ span{
 
 
 #heading{
-    height: 80vh !important;
+    height: 100vh !important;
     margin-top: 20% !important;
 }
 #name{
