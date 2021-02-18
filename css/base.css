@@ -471,7 +471,7 @@ body{
     margin-top: -160% !important;
 }
 .section-title h2{
-    font-size: 380% !important;
+    font-size: 400% !important;
 }
 span{
     padding:0.1%;
@@ -490,7 +490,7 @@ span{
     margin-top: 40% !important;
 }
 #name{
-    font-size: 130%;
+    font-size: 120%;
     display: inline-block;
     margin-bottom: 5%;
 }
@@ -510,14 +510,16 @@ home-header::after {
 }
 
 .right{
+    margin-top: 5%;
     width:80% !important;
     padding: 0;
-    padding-left: 2%;
+    padding-left: 5%;
+    color:grey;
 }
 .left{
     width:50% !important;
     display: inline-block;
-    margin-top: 10%;
+    margin-top: 6%;
 }
 /* -------------- ABOUT SECTION  -------------- */
 
@@ -528,7 +530,7 @@ home-header::after {
     height: 2px;
     left:  7% !important ;
     position: absolute;
-    width: 25%;
+    width: 20%;
 }
 /* -------------- END ABOUT SECTION  -------------- */
 
@@ -557,8 +559,8 @@ home-header::after {
 }
 
 iframe{
-    height: 100px !important;
-    width: 95% !important;
+    height: 150px !important;
+    width: 98% !important;
 }
 
 /* -------- resume ---------------- */
@@ -570,7 +572,8 @@ iframe{
 
 /* copyright */
 .copyright{
-    margin-left: 5% !important;
+    margin-top: 5% !important;
+    margin-left: 15% !important;
 }
 }
    
