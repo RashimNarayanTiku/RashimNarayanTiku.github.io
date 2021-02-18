@@ -483,7 +483,9 @@ span{
     width: 100% !important;
     margin-right: 0 !important;
 }
-
+.skill-outer h4{
+    font-size: 120% !important;
+}
 
 #heading{
     height: 120vh !important;
