@@ -584,6 +584,7 @@ iframe{
 
 /* copyright */
 .copyright{
+    font-size: 75%;
     margin-top: 5% !important;
     margin-left: 10% !important;
 }
