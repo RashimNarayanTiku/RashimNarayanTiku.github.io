@@ -1,0 +1,563 @@
+body {
+    background: white;  
+    padding-top: 70px;
+    overflow-x:hidden; 
+    scroll-behavior: smooth;
+}
+body::-webkit-scrollbar { 
+    display: none;
+} 
+.separator {
+    margin: 3rem 0;
+    border-bottom: 1px dashed #fff; 
+}
+
+.text-uppercase {
+    letter-spacing: 0.1em;  
+}
+
+.text-gray {
+    color: #aaa;    
+}
+
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+
+
+#sidebar {
+    background-color: #000000 !important;
+    min-width: 12rem;
+    width: 12rem !important;
+    padding: 2% 0 0 2%;
+    height: 100vh;
+}
+
+@font-face {
+    font-family: firaCodeFont;
+    src: url(FiraCode-Regular.woff);
+  }
+
+@font-face {
+    font-family: shamberFont;
+    src: url(Shamber-ERo4.ttf);
+  }
+@font-face {
+    font-family: aquireFont;
+    src: url(Aquire-BW0ox.otf);
+  }
+@font-face {
+    font-family: lemonFont;
+    src: url(LemonMilkRegular-X3XE2.otf);
+  }
+
+.navbar-nav{
+    margin-left:10%;
+    margin-top: 10%;
+}  
+
+.nav-link {
+    font-family: firaCodeFont,Lucida Console, sans-serif;  
+    font-size: 1.2rem;
+    letter-spacing: 0.13rem;
+    color: #8b8b8b !important;
+}
+
+#second-row{
+    box-sizing: border-box;
+    background-color: #000000 !important;
+    color:#f5f5f5;
+}
+
+.profile-img{
+    border-radius: 50%;
+    margin-left:15%;
+    margin-top: 15%;
+}
+
+/* progress bar */
+#progressbar{
+    width: 100%;
+    height:1%;
+    position:fixed;
+    background-color: #585858;
+    transform: scaleX(0);
+    transform-origin: 0;
+    z-index: 1022;
+}
+
+
+/* active section arrows */
+.arrow-right {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    padding: 3px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    display:none;
+}
+
+.active > a{
+    color:white !important;
+}
+.active > a .arrow-right{
+    display: inline-block !important;
+}
+
+
+span {
+    color: #c0bebe;
+    font: 500 15px open sans,sans-serif;
+    padding-right: 10px;
+}
+.section-title{
+    display: inline;
+}
+.section-title h2{
+    display: inline;
+    color:white;
+    font-family: sans-serif;
+    font-size: 450%;
+    font-weight: 800;
+    color: inherit;
+    margin-top: 1.5%;
+    line-height: 1.1em;
+    text-transform: uppercase;
+    opacity: 0.2;
+    
+    
+}
+.section-title h2::after {
+    background: #ffffff none repeat scroll 0 0 !important;
+    content: "";
+    display: table;
+    height: 2px;
+    left: calc(12rem + 4%) ;
+    position: absolute;
+    width: 7%;
+}
+
+.section-heading{
+    font-family: monospace, sans-serif;
+    font-size: 1.4em;
+    color:rgb(196, 196, 196);
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+.section-content{
+    font-size: 1.2em;
+    letter-spacing: 0.1em;
+    font-family:  sans-serif;
+    color:rgb(175, 174, 174);
+    
+}
+.skills{
+    width:100%;
+    display:inline-block;
+    margin: 1% 15% 0% 0%;
+
+}
+.skill-outer{
+    display: inline-block;
+    width:45%;
+    margin-right: 4%;
+    margin-top: 4%;
+}
+.skill-outer h4{
+    font: 600 20px monospace;
+}
+.progress{
+    width:90%;
+}
+#name{
+    color:rgb(26, 26, 26);
+    background-color: rgb(202, 199, 199);
+    font-family: impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    font-size: 1.4em;
+}
+
+
+#projects{
+    margin-bottom: 5%;
+}
+
+#projects ul{
+    margin-top: 3%;
+    margin-left: -3%;
+    padding:0 3%;
+
+}
+#projects li{
+    list-style: none;
+    display: inline-block;
+    height:auto;
+    overflow-x: hidden;
+    width: 40%;
+    margin-top:-2%;
+}
+
+.page-content{
+    width:calc(100% - 12rem);
+    margin-left: calc(4% + 12rem);
+}
+
+/*------------ portfolio--------------*/
+.img__wrap {
+    position:relative;
+    align-items: center;
+    display: inline-block;
+    height:70%;
+    overflow-y:hidden;
+    margin: 0 auto;
+    box-shadow: #fff;
+  }
+
+.resumeWrapper{
+    margin-bottom: 5%;
+}
+.img__description_layer {
+    font-family: system-ui;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(99, 99, 100, 0.932);
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow:hidden;
+
+    transition: opacity .3s, visibility .3s;
+}
+
+
+.img__img{
+    padding:3%;
+    background-color: black;
+}
+
+.imghvr-blur h2 {
+    margin-left: -2%;
+    font-size: 150%;
+    letter-spacing: 0;
+    font-weight: 600;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.imghvr-blur p {
+    margin-left: 1%;
+    font-size: 90%;
+    letter-spacing: 0;
+    font-weight: 100;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.img__wrap:hover .img__description {
+    transform: translateY(0);
+}
+
+
+/* --------------- RESUME --------------- */
+.resume-img{
+    margin: 0 auto;
+    width:50%;
+    height:30%;
+    margin: 5% 10%;
+}
+  
+/* ----------------------end resume------------------------- */
+
+.home-header__title{
+    color:#000000;
+    margin-bottom: 0% !important;
+
+}
+
+.social-links {
+    padding: 0;
+    list-style-type: none;
+}
+.social{
+    width:16px;
+    height:16px;
+    margin-left: 0.5%;
+    padding:0;
+    float:left;
+    
+}
+.social  i{
+color:#000;
+}
+
+.social-links-2{
+    margin-top: 99%;
+}
+
+
+.social-links-2 li {
+    margin-left: -17%;
+    padding-right: 30%;
+    margin-right: 11%;
+    list-style-type: none;
+}
+.social-2 i{
+    color:grey;
+}
+.social-2 i:hover{
+    color:#fff;
+}
+.social-2 {
+    width:26px;
+    height:16px;
+    padding:0;
+    float:left;
+    padding:0;
+}
+
+.social-links-3{
+    color:rgb(158, 157, 157);
+}
+.social-links-3 li {
+    margin-left: -17%;
+    padding-right: 0%;
+    margin-right: 11%;
+    list-style-type: none;
+}
+.social-3 a{
+    color:grey;
+    size:150%;
+}
+.social-3 a:hover{
+    color:#fff;
+    text-decoration: none;
+}
+
+#scroll-snap-wrapper::-webkit-scrollbar { 
+    display: none;
+}
+
+#heading, #about, #projects{
+    height:100vh;
+}
+/* ----------------------------------------Contact---------------------------------------- */
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+*:focus {
+  outline: none;
+}
+#contact-box {
+    width: 90%;
+    box-sizing: border-box;
+    background: #000;
+    border-radius: 2px;
+    margin-top: 1%;
+    font-family: 'Roboto',sans-serif;
+}
+
+.right {
+    display: inline-block;
+    color: rgb(177, 176, 176);
+    font-family: monospace;
+    padding: 30px 0px 0px 200px;
+    /* width: 70%; */
+    height: 50%;
+    /* margin-top: -20%; */
+  }
+.right ul{
+    padding-left: 0;
+    margin-left: 0%;
+}
+  
+.left {
+    display: inline-block;
+    font-family: monospace, sans-serif;
+    margin-top: 10%;
+    width: 20%;
+    height: 50%;
+  }
+
+input[type="text"],
+input[type="password"] {
+  display: block;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 4px;
+  width: 200%;
+  height: 32px;
+  border: none;
+  border-bottom: 1px solid #AAA;
+  font-family: monospace, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  transition: 0.2s ease;
+  background-color:#000;
+  color:grey;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-bottom: 2px solid #16a085;
+  color: #16a085;
+  transition: 0.2s ease;
+}
+
+input[type="submit"] {
+  margin-top: 28px;
+  width: 120px;
+  height: 32px;
+  background: #16a085;
+  border: none;
+  border-radius: 2px;
+  color: #FFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: 0.1s ease;
+  cursor: pointer;
+}
+textarea{
+    background-color: black;
+}
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  opacity: 0.8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+
+input[type="submit"]:active {
+  opacity: 1;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+
+
+.google-maps{
+    width: 100%;
+    display:block;
+    margin-top:2%;
+}
+
+.copyright{
+    font-family: monospace;
+    margin-left: 40%;
+    color:grey;
+    background-color: black;
+}
+
+
+@media (max-width: 568px) {
+
+#sidebar {
+    margin-left: -12rem;
+}
+.page-content{
+    width:100% !important;
+    margin-left: 5% !important;
+    margin-top: -160% !important;
+}
+.section-title h2{
+    font-size: 380% !important;
+}
+span{
+    padding:0.1%;
+}
+.skill-outer{
+    width: 100% !important;
+}
+
+
+#heading{
+    height: 80vh !important;
+    margin-top: 20% !important;
+}
+#name{
+    font-size: 150%;
+    display: inline-block;
+    margin-bottom: 5%;
+}
+.social-links{
+    margin-top: -6% !important;
+}
+.home-header__title{
+    font-size:620% !important;
+}
+.home-header__position{
+    margin-top: 5%;
+}
+
+.right{
+    width:80% !important;
+    padding: 0;
+    padding-left: 2%;
+}
+.left{
+    width:50% !important;
+    display: inline-block;
+    margin-top: 10%;
+}
+/* -------------- ABOUT SECTION  -------------- */
+
+.section-title h2::after {
+    background: #ffffff none repeat scroll 0 0 !important;
+    content: "";
+    display: table;
+    height: 2px;
+    left:  7% !important ;
+    position: absolute;
+    width: 25%;
+}
+/* -------------- END ABOUT SECTION  -------------- */
+
+
+/* -------- project ---------------- */
+#projects li{
+    list-style: none;
+    display: inline-block;
+    height:auto;
+    overflow-x: hidden;
+    width: 95%;
+    margin-top: 2%;
+}
+#projects{
+    margin-bottom: 90%;
+}
+/* -------- project ---------------- */
+
+
+/* -------- resume ---------------- */
+
+.resume-img{
+    width: 90% !important;
+    margin: 15% 2% !important;
+
+}
+
+iframe{
+    height: 100px !important;
+    width: 95% !important;
+}
+
+/* -------- resume ---------------- */
+
+
+#contact-box{
+    width:80% !important;
+}
+
+/* copyright */
+.copyright{
+    margin-left: 5% !important;
+}
+}
+   
