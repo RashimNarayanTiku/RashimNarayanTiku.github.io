@@ -521,8 +521,7 @@ iframe{
 /* copyright */
 .copyright{
     font-size: 75% !important;
-    margin-top: 5% !important;
-    margin-left: 13% !important;
+    margin: 0 auto !important;
 }
 }
    
