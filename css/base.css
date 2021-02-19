@@ -283,7 +283,7 @@ span {
 .home-header__title{
     color:#000000;
     margin-bottom: 0% !important;
-    margin-top: 5%;
+    margin-top: 1%;
 }
 
 .social-links {
@@ -372,10 +372,8 @@ color:#000;
     color:grey;
     font-family: "monospaceFont", sans-serif;
     padding: 30px 0px 0px 200px;
-    /* width: 70%; */
     height: 50%;
-    /* margin-top: -20%; */
-  }
+}
 .right ul{
     padding-left: 0;
     margin-left: 0%;
