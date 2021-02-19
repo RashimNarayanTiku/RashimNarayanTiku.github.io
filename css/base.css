@@ -411,16 +411,18 @@ color:#000;
 .page-content{
     width:100% !important;
     margin-left: 5% !important;
-    margin-top: -160% !important;
+    margin-top: -165% !important;
 }
 .section-title h2{
+    display: block;
     font-size: 400% !important;
+    margin-bottom: 8% !important;
 }
 span{
     padding:0.1%;
 }
 .skills{
-    margin:0 !important;
+    margin: 0 !important;
 }
 .skill-outer{
     width: 100% !important;
@@ -430,8 +432,9 @@ span{
     font-size: 100% !important;
 }
 
+
 #heading{
-    height: 80vh !important;
+    height: 75vh !important;
     margin-top: 40% !important;
 }
 #name{
@@ -499,7 +502,7 @@ home-header::after {
 
 .resume-img{
     width: 90% !important;
-    margin: 15% 2% !important;
+    margin: 0% 1% 15% 2% !important;
 
 }
 
