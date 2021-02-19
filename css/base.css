@@ -1,6 +1,3 @@
-/* @import url(href://https://fonts.googleapis.com/css?family="monospaceFont"); */
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
-
 body {
     background: white;  
     padding-top: 70px;
@@ -55,14 +52,6 @@ body::-webkit-scrollbar {
 @font-face {
     font-family: shamberFont;
     src: url(Shamber-ERo4.ttf);
-  }
-@font-face {
-    font-family: aquireFont;
-    src: url(Aquire-BW0ox.otf);
-  }
-@font-face {
-    font-family: lemonFont;
-    src: url(LemonMilkRegular-X3XE2.otf);
   }
 
 .navbar-nav{
@@ -186,7 +175,7 @@ span {
 }
 #name{
     color:rgb(26, 26, 26);
-    background-color: rgb(202, 199, 199);
+    background-color: rgb(223, 219, 219);
     font-family: ImpactFont, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-transform: uppercase;
     font-weight: 500;
@@ -377,6 +366,7 @@ color:#000;
 .right {
     display: inline-block;
     color: rgb(177, 176, 176);
+    color:grey;
     font-family: "monospaceFont", sans-serif;
     padding: 30px 0px 0px 200px;
     /* width: 70%; */
@@ -396,61 +386,6 @@ color:#000;
     height: 50%;
   }
 
-input[type="text"],
-input[type="password"] {
-  display: block;
-  box-sizing: border-box;
-  margin-bottom: 20px;
-  padding: 4px;
-  width: 200%;
-  height: 32px;
-  border: none;
-  border-bottom: 1px solid #AAA;
-  font-family: "monospaceFont", sans-serif;
-  font-weight: 400;
-  font-size: 20px;
-  transition: 0.2s ease;
-  background-color:#000;
-  color:grey;
-}
-
-input[type="text"]:focus,
-input[type="password"]:focus {
-  border-bottom: 2px solid #16a085;
-  color: #16a085;
-  transition: 0.2s ease;
-}
-
-input[type="submit"] {
-  margin-top: 28px;
-  width: 120px;
-  height: 32px;
-  background: #16a085;
-  border: none;
-  border-radius: 2px;
-  color: #FFF;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  text-transform: uppercase;
-  transition: 0.1s ease;
-  cursor: pointer;
-}
-textarea{
-    background-color: black;
-}
-input[type="submit"]:hover,
-input[type="submit"]:focus {
-  opacity: 0.8;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  transition: 0.1s ease;
-}
-
-input[type="submit"]:active {
-  opacity: 1;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-  transition: 0.1s ease;
-}
-
 
 .google-maps{
     width: 100%;
@@ -459,6 +394,7 @@ input[type="submit"]:active {
 }
 
 .copyright{
+    margin-top: 3%;
     font-family: "monospaceFont", sans-serif;
     margin-left: 40%;
     color:grey;
@@ -469,9 +405,6 @@ input[type="submit"]:active {
 
 @media (max-width: 568px) {
 
-body{
-    overflow-x: hidden !important;
-}
 #sidebar {
     margin-left: -12rem;
 }
@@ -498,7 +431,7 @@ span{
 }
 
 #heading{
-    height: 120vh !important;
+    height: 90vh !important;
     margin-top: 40% !important;
 }
 #name{
