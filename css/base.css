@@ -1,9 +1,12 @@
+html{
+    scroll-behavior: smooth;
+}
 body {
     background: white;  
     padding-top: 70px;
     overflow-x:hidden; 
-    scroll-behavior: smooth;
 }
+
 body::-webkit-scrollbar { 
     display: none;
 } 
@@ -280,7 +283,7 @@ span {
 .home-header__title{
     color:#000000;
     margin-bottom: 0% !important;
-
+    margin-top: 5%;
 }
 
 .social-links {
