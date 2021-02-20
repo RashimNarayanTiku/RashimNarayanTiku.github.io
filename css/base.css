@@ -1,15 +1,18 @@
 html{
     scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
 }
+html::-webkit-scrollbar { 
+    display: none;
+} 
+
 body {
     background: white;  
     padding-top: 70px;
-    overflow-x:hidden; 
+    overflow-x:hidden;
 }
 
-body::-webkit-scrollbar { 
-    display: none;
-} 
 .separator {
     margin: 3rem 0;
     border-bottom: 1px dashed #fff; 
