@@ -443,8 +443,12 @@ span{
     display: inline-block;
     margin-bottom: 5%;
 }
-.social-links{
+.social-links {
     margin-top: -13% !important;
+}
+.social-links li{
+    font-size: 130% !important;
+    margin-right: 3% !important;
 }
 
 .home-header__title{
