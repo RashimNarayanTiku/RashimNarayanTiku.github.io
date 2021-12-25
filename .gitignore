@@ -4,3 +4,9 @@ dist
 dist-ssr
 *.local
 spaceStation
+earth
+earth-1
+earth-real
+moon
+sun
+package-lock.json
