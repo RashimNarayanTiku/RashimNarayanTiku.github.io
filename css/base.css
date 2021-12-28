@@ -1,0 +1,455 @@
+/* ===================================== v2 start ============================================ */
+
+@font-face{
+    font-family: monospaceFont;
+    src:url(Cousine-Regular.ttf);
+}
+@font-face {
+    font-family: ImpactFont;
+    src: url(impact.ttf);
+}
+@font-face {
+    font-family: firaCodeFont;
+    src: url(FiraCode-Regular.woff);
+}
+
+@font-face {
+    font-family: shamberFont;
+    src: url(Shamber-ERo4.ttf);
+}
+
+body{
+    background-color: #000;
+    overflow-x: hidden;
+}
+
+.page {
+    height: 100vh !important;
+    margin-bottom: 150vh;
+}
+
+.page-1 {
+    height: 100vh !important;
+    background-color: #fff !important;
+    padding-left: 5vw;
+}
+
+.name-heading {
+    font-size: 1200%;
+    color: black;
+    font-weight: bold;
+    padding-top: 20vh;
+    margin-bottom: -2%;
+    margin-left: -15px;
+}
+
+#type-writer {
+    padding-right: 0;
+    font-size:196%;
+    color: black;
+    font-weight: bolder;
+    border-right: 3px solid black;
+}
+
+.social-links {
+    padding: 0;
+    list-style-type: none;
+    margin-left: -25px;
+}
+.social{
+    font-size: 120% !important;
+    margin-left: 0.6%;
+    float:left;    
+}
+.social  i{
+color:#000;
+}
+
+#page-1-line {
+    margin-top: 5%;
+    margin-left: -15px;
+    width:90%;
+    border-bottom: 5px solid black;
+}
+
+.fade {
+    opacity: 1;
+}
+
+section {
+    margin: 0 auto !important;
+    width: 75vw;
+}
+
+.fixed-position {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.section-title{
+    display: inline;
+}
+.section-title h2{
+    display: inline;
+    color:white !important;
+    font-family: sans-serif;
+    font-size: 700%;
+    font-weight: 1000;
+    text-transform: uppercase;
+    opacity: 0.12;
+}
+.section-title small {
+    font-size: 20% !important;
+}
+.section-title h2::after {
+    background: #ffffff none repeat scroll 0 0 !important;
+    content: "";
+    display: table;
+    margin: -8px 0px 0px 20px;
+    height: 2px;
+    position: absolute;
+    width: 13%;
+}
+
+.section-heading{
+    font-family: "monospaceFont", sans-serif;
+    font-size: 1.4em;
+    color:rgb(196, 196, 196);
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+.section-content{
+    font-size: 1.2em;
+    letter-spacing: 0.1em;
+    font-family:  sans-serif;
+    color:rgb(175, 174, 174);
+}
+
+#name {
+    color: rgb(26, 26, 26);
+    background-color: rgb(223, 219, 219);
+    font-family: ImpactFont, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    font-size: 1.4em;
+}
+
+
+.skills img{
+    padding-right: 2%;
+    margin: 0 auto;
+}
+/* ===================================== v2 end ============================================ */
+
+
+
+
+/* 
+
+body {
+    background: white;  
+    padding-top: 70px;
+    overflow-x:hidden;
+}
+
+
+
+#second-row{
+    box-sizing: border-box;
+    background-color: #000000 !important;
+    color:#f5f5f5;
+}
+
+
+.skills{
+    width:100%;
+    display:inline-block;
+    margin: 1% 15% 0% 0%;
+
+}
+.skill-outer{
+    display: inline-block;
+    width:45%;
+    margin-right: 4%;
+    margin-top: 4%;
+}
+.skill-outer h4{
+    font: 600 20px "monospaceFont", sans-serif;
+}
+
+#name{
+    color:rgb(26, 26, 26);
+    background-color: rgb(223, 219, 219);
+    font-family: ImpactFont, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    font-size: 1.4em;
+}
+
+
+#projects{
+    margin-bottom: 5%;
+}
+
+#projects ul{
+    margin-top: 3%;
+    margin-left: -3%;
+    padding:0 3%;
+
+}
+#projects li{
+    list-style: none;
+    display: inline-block;
+    height:auto;
+    overflow-x: hidden;
+    width: 40%;
+    margin-top:-2%;
+} 
+
+
+
+.resume-img{
+    margin: 0 auto;
+    width:50%;
+    height:30%;
+    margin: 5% 10%;
+}
+  
+
+.home-header__title{
+    color:#000000;
+    margin-bottom: 0% !important;
+    margin-top: 1%;
+}
+
+.social-links-2{
+    margin-top: 99%;
+}
+
+
+.social-links-2 li {
+    margin-left: -17%;
+    padding-right: 30%;
+    margin-right: 11%;
+    list-style-type: none;
+}
+.social-2 i{
+    color:grey;
+}
+.social-2 i:hover{
+    color:#fff;
+}
+.social-2 {
+    width:26px;
+    height:16px;
+    padding:0;
+    float:left;
+    padding:0;
+}
+
+.social-links-3{
+    color:rgb(158, 157, 157);
+}
+.social-links-3 li {
+    margin-left: -17%;
+    padding-right: 0%;
+    margin-right: 11%;
+    list-style-type: none;
+}
+.social-3 a{
+    color:grey;
+    size:150%;
+}
+.social-3 a:hover{
+    color:#fff;
+    text-decoration: none;
+}
+
+#scroll-snap-wrapper::-webkit-scrollbar { 
+    display: none;
+}
+*/
+
+/* ----------------------------------------Contact---------------------------------------- */
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+*:focus {
+  outline: none;
+}
+#contact-box {
+    width: 90%;
+    box-sizing: border-box;
+    background: #000;
+    border-radius: 2px;
+    margin-top: 1%;
+    font-family: "monospaceFont",sans-serif;
+}
+
+.right {
+    display: inline-block;
+    color: rgb(177, 176, 176);
+    color:grey;
+    font-family: "monospaceFont", sans-serif;
+    padding: 30px 0px 0px 200px;
+    height: 50%;
+}
+.right ul{
+    padding-left: 0;
+    margin-left: 0%;
+}
+  
+.left {
+    display: inline-block;
+    font-family: "monospaceFont", sans-serif;
+    margin-top: 10%;
+    width: 20%;
+    height: 50%;
+  }
+
+
+.google-maps{
+    width: 100%;
+    display:block;
+    margin-top:2%;
+}
+
+.copyright{
+    margin-top: 3%;
+    font-family: "monospaceFont", sans-serif;
+    margin-left: 40%;
+    color:grey;
+    background-color: black;
+}
+
+/* 
+
+@media (max-width: 568px) {
+
+#sidebar {
+    margin-left: -12rem;
+}
+.page-content{
+    width:100% !important;
+    margin-left: 5% !important;
+    margin-top: -165% !important;
+}
+.section-title h2{
+    display: block;
+    font-size: 400% !important;
+    margin-bottom: 8% !important;
+}
+span{
+    padding:0.1%;
+}
+.skills{
+    margin: 0 !important;
+}
+.skill-outer{
+    width: 100% !important;
+    margin-right: 0 !important;
+}
+.skill-outer h4{
+    font-size: 100% !important;
+}
+
+
+#heading{
+    height: 75vh !important;
+    margin-top: 40% !important;
+}
+#name{
+    font-size: 120%;
+    display: inline-block;
+    margin-bottom: 5%;
+}
+.social-links {
+    margin-top: -13% !important;
+}
+.social-links li{
+    font-size: 130% !important;
+    margin-right: 3% !important;
+}
+
+.home-header__title{
+    font-size:620% !important;
+}
+.home-header__position{
+    margin-top: 10%;
+}
+
+home-header::after {
+    margin-top: 10%;
+}
+
+.right{
+    margin-top: 5%;
+    width:80% !important;
+    padding: 0;
+    padding-left: 5%;
+    color:grey;
+}
+.left{
+    width:50% !important;
+    display: inline-block;
+    margin-top: 6%;
+}*/
+/* -------------- ABOUT SECTION  -------------- */
+
+/* .section-title h2::after {
+    background: #ffffff none repeat scroll 0 0 !important;
+    content: "";
+    display: table;
+    height: 2px;
+    left:  7% !important ;
+    position: absolute;
+    width: 20%;
+} */
+/* -------------- END ABOUT SECTION  -------------- */
+
+
+/* -------- project ---------------- */
+/* #projects li{
+    list-style: none;
+    display: inline-block;
+    height:auto;
+    overflow-x: hidden;
+    width: 95%;
+    margin-top: 2%;
+}
+#projects{
+    margin-bottom: 90%;
+} */
+/* -------- project ---------------- */
+
+
+/* -------- resume ---------------- */
+
+/* .resume-img{
+    width: 95% !important;
+    margin: 0% 0% 35% 0% !important;
+
+}
+
+iframe{
+    height: 150px !important;
+    width: 98% !important;
+} */
+
+/* -------- resume ---------------- */
+
+
+/* #contact-box{
+    width:80% !important;
+} */
+
+/* copyright */
+/* .copyright{
+    font-size: 75% !important;
+    margin: 0 auto !important;
+    margin-top: 5% !important;
+} */
+/* } */

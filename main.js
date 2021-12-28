@@ -1,17 +1,16 @@
-import './style.css'
+import './css/style.css'
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
+// // Renderer
+// const renderer = new THREE.WebGLRenderer()
+// renderer.setSize(window.innerWidth, window.innerHeight)
+// document.body.appendChild(renderer.domElement)
 
-// Renderer
-const renderer = new THREE.WebGLRenderer()
-renderer.setSize(window.innerWidth, window.innerHeight)
-document.body.appendChild(renderer.domElement)
-
-// const renderer = new THREE.WebGL1Renderer({ canvas: document.querySelector('#bg') });
-// renderer.setPixelRatio(window.devicePixelRatio);
-// renderer.setSize(window.innerWidth, window.innerHeight);
+const renderer = new THREE.WebGL1Renderer({ canvas: document.querySelector('#bg') });
+renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setSize(window.innerWidth, window.innerHeight);
 
 
 
@@ -25,8 +24,6 @@ camera.position.set(0,2,1200);
 // Lights and OrbitControls
 const pointLight = new THREE.PointLight(0xffffff);
 pointLight.position.set(20,23,12);
-const ambientLight = new THREE.AmbientLight(0xffffff);
-// const lightHelper = new THREE.PointLightHelper(pointLight);
 scene.add(pointLight);
 
 
@@ -43,33 +40,8 @@ function onWindowResize() {
 
 
 
-// // Making basic dot stars
-// function addBasicStar(px,py,pz,size,color) {
-//     const geo = new THREE.SphereGeometry(0.1, 24, 24);
-//     const material = new THREE.MeshStandardMaterial( { color: color } );
-//     const star = new THREE.Mesh(geo, material);
-//     const [x,y,z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(size));
-//     star.position.set(px+x, py+y, pz+z);
-//     scene.add(star);
-// }
-// // 
-// //position, size, count, color
-// const groups = [ [[0,0,0],1000,3000,0xffffff] ];
-
-// for(let group of groups) {
-//     let position = group[0];
-//     let size = group[1];
-//     let count = group[2];
-//     let color = group[3];
-
-//     for(let i=0; i<count; i++) {
-//         addBasicStar(position[0],position[1],position[2],size,color);
-//     }
-// }
-
-
-
 // Adding Hollow Sphere of Stars
+let sphere;
 const v = new THREE.Vector3();
 function randomPointInSphere(radius) {
 
@@ -84,7 +56,6 @@ function randomPointInSphere(radius) {
 
   return v;
 }
-let sphere;
 function makeStarSphere() {
   let geometry = new THREE.BufferGeometry();
   let positions = [];
@@ -103,7 +74,7 @@ function makeStarSphere() {
 
 
 
-// Loading 3-D Models 
+// Loading 3-D Model
 let saturn;
 function loadSaturn() {
   let loader = new GLTFLoader();
@@ -120,20 +91,20 @@ function loadSaturn() {
 
 // Camera Animation Path
 let pathCurve = new THREE.CatmullRomCurve3([
-  new THREE.Vector3(20,2,150),
-  new THREE.Vector3(-30,2,150),
+  new THREE.Vector3(20,2,140),
+  new THREE.Vector3(-30,2,140),
   new THREE.Vector3(-30,2,40),
   new THREE.Vector3(-30,2,30),
   new THREE.Vector3(-30,2,20),
   new THREE.Vector3(-30,2,10),
   new THREE.Vector3(-30,2,0),
-  new THREE.Vector3(-30,2,-12),
-  new THREE.Vector3(-20,2,-12),
-  new THREE.Vector3(-10,2,-12),
-  new THREE.Vector3(16,2,-12),
-  new THREE.Vector3(17,2,-14),
-  new THREE.Vector3(20,2,-11),
-  new THREE.Vector3(20,2,0),
+  new THREE.Vector3(-30,2,-17),
+  new THREE.Vector3(-20,2,-17),
+  new THREE.Vector3(-10,2,-17),
+  new THREE.Vector3(16,2,-17),
+  new THREE.Vector3(17,2,-17),
+  new THREE.Vector3(20,2,-17),
+  new THREE.Vector3(20,2,7),
   new THREE.Vector3(20,2,10),
   new THREE.Vector3(20,2,11),
   new THREE.Vector3(20,2,12),
@@ -141,15 +112,13 @@ let pathCurve = new THREE.CatmullRomCurve3([
   new THREE.Vector3(20,2,31),
   new THREE.Vector3(20,2,41),
   new THREE.Vector3(20,2,51),
-  new THREE.Vector3(20,2,81),
+  new THREE.Vector3(20,2,50),
   new THREE.Vector3(20,2,120),
-  new THREE.Vector3(40,2,150),
-  new THREE.Vector3(50,2,150),
 ]);
 
 
 
-//Scroll binding for lerping
+// Scroll binding for lerping
 let oldValue = 0;
 let newValue = 0;
 let progress = 0;
@@ -159,17 +128,34 @@ window.addEventListener('scroll', (e) => {
 
   newValue = window.pageYOffset;
 
-  progress += (newValue - oldValue) * 0.009;
-  progress = progress % 1; 
-  if(!(progress >= 0 && progress < 1))
-    progress = 0;
-  
+  progress += (newValue - oldValue) * 0.0002;
+  // let speed = ((newValue > oldValue) ? 0.01 : -0.01);
+
+  // if(progress == 0 && speed < 0) {
+  //   console.log('Progress is 0');
+  //   progress = 0.99
+  // }
+  // progress += speed;
+  // progress = progress % 1; 
+
+  if(!(progress >= 0 && progress < 1)) {
+
+    if(newValue > oldValue) progress = 0;
+    else progress = 0.99; 
+    // let speed = ((newValue > oldValue) ? 0.1 : -0.1);
+    // progress += speed;
+    console.log('progress:',progress);
+    console.log("NOT NORMAL ")
+    // progress = 0;
+  }
+
   cameraTarget.copy(pathCurve.getPointAt(progress));
   renderer.render( scene, camera );
   oldValue = newValue;
 });
 
 
+// Recurring function for 3-D animation
 function animate() {
   if(saturn) saturn.rotation.y += 0.002;
   if(sphere) sphere.rotation.y += 0.0005;
@@ -181,7 +167,68 @@ function animate() {
 }
 
 
-makeStarSphere();
-loadSaturn();
-animate();
+// Fade Effect for portfolio scrolling
+function fadeEffect() {
+$(window).scroll(function() {
+  let windowTop = $(this).scrollTop();
+  let windowBottom = $(this).scrollTop() + $(this).innerHeight();
+  $(".fade").each(function() {
+    /* Check the location of each desired element */
+    let objectTop = $(this).offset().top;
+    let sectionHeight = ($(window).height())/5;
 
+    let objectBottom = $(this).offset().top + $(this).outerHeight();
+
+    if (objectTop < windowBottom) { //object comes into view (scrolling down)
+      if ($(this).css("opacity")==0) $(this).fadeTo(500,1);
+      this.querySelector('section').classList.add('fixed-position');
+
+      if(objectBottom - 250 < windowTop) {
+        if ($(this).css("opacity")==1) {
+          $(this).fadeTo(500,0);
+        }
+        if(objectBottom < windowTop) {
+          this.querySelector('section').classList.remove('fixed-position');
+        }
+      }
+    }
+    else {
+      if ($(this).css("opacity")==1) $(this).fadeTo(500,0);
+      this.querySelector('section').classList.remove('fixed-position');
+    }
+
+  });
+}).scroll(); //invoke scroll-handler on page-load  
+}
+
+
+// First Page animation effect
+function typeWriter(i) {
+  let txt = '/Software Developer';
+  const speed = 100;
+
+  if (i < txt.length) {
+      document.getElementById("type-writer").innerHTML += txt.charAt(i);
+      setTimeout(() => typeWriter(i+1), speed);
+
+  } else if (i < txt.length+5) {
+    if(document.getElementById('type-writer').style.borderRight == "3px solid black")
+      document.getElementById('type-writer').style.borderRight = "3px solid white";
+    else 
+      document.getElementById('type-writer').style.borderRight = "3px solid black";
+    setTimeout(() => typeWriter(i+1), speed+400);
+
+  } else {
+    document.getElementById('type-writer').style.borderRight = "none";
+  }
+}
+
+
+
+$(function() {
+  typeWriter(0);  
+  fadeEffect();    
+  loadSaturn();
+  makeStarSphere();
+  animate();
+});
