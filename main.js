@@ -215,10 +215,10 @@ function typeWriter(i) {
   }
 }
 
-loadSaturn();
 $(function() {
   typeWriter(0);  
   fadeEffect();    
+  loadSaturn();
   makeStarSphere();
   animate();
 });
