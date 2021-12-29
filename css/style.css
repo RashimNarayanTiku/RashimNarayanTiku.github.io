@@ -24,6 +24,8 @@ canvas {
     position: fixed;
     top: 0;
     left: 0;
+    width: 100vw;
+    height: 100vh;
 }
 
 main{
@@ -49,6 +51,25 @@ html::-webkit-scrollbar {
 body{
     background-color: #000;
     overflow-x: hidden;
+}
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #fff;
+    width: 100vw;
+    height: 100vh;
+}
+#loader-content {
+    position: absolute;
+    top: 35%;
+    width:100vw;
+}
+#loader-content > *{
+    font-size: 150%; 
+    margin-left:46vw;
 }
 
 .page {

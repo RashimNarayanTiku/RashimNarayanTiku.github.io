@@ -75,6 +75,7 @@ function loadSaturn() {
     object.position.set(0,0,0);
     saturn = object;
     scene.add( object );
+    document.getElementById('loader').style.display = "none";
   });
 }
 
@@ -215,7 +216,6 @@ function typeWriter(i) {
 }
 
 loadSaturn();
-
 $(function() {
   typeWriter(0);  
   fadeEffect();    
