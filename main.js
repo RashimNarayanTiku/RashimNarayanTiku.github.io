@@ -196,6 +196,9 @@ $(window).scroll(function() {
 
 // First Page animation effect
 function typeWriter(i) {
+
+  while(document.getElementById('loader').style.display !== "none");
+
   let txt = '/Software Developer';
   const speed = 100;
 
@@ -216,9 +219,9 @@ function typeWriter(i) {
 }
 
 $(function() {
+  loadSaturn();
   typeWriter(0);  
   fadeEffect();    
-  loadSaturn();
   makeStarSphere();
   animate();
 });
