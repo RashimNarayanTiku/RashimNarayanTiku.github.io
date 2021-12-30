@@ -77,6 +77,7 @@ function loadSaturn() {
     scene.add( object );
 
     document.getElementById('loader').style.display = "none";
+    document.getElementsByTagName('body')[0].style.overflowY = "scroll";
     typeWriter(0);
   });
 }

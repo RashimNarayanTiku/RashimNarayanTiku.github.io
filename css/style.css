@@ -51,6 +51,7 @@ html::-webkit-scrollbar {
 body{
     background-color: #000;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 #loader {
