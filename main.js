@@ -65,25 +65,6 @@ function makeStarSphere() {
 
 
 
-// Loading 3-D Model
-let saturn;
-function loadSaturn() {
-  let loader = new THREE.GLTFLoader();
-  loader.crossOrigin = true;
-  loader.load("./saturn/scene.glb", function(data) {
-    let object = data.scene;
-    object.position.set(0,0,0);
-    saturn = object;
-    scene.add( object );
-
-    document.getElementById('loader').style.display = "none";
-    document.getElementsByTagName('body')[0].style.overflowY = "scroll";
-    typeWriter(0);
-  });
-}
-
-
-
 // Camera Animation Path
 let pathCurve = new THREE.CatmullRomCurve3([
   new THREE.Vector3(20,2,140),
@@ -150,6 +131,7 @@ window.addEventListener('scroll', (e) => {
 });
 
 
+
 // Recurring function for 3-D animation
 function animate() {
   if(saturn) saturn.rotation.y += 0.002;
@@ -160,6 +142,7 @@ function animate() {
   renderer.render(scene, camera);
   requestAnimationFrame(animate);
 }
+
 
 
 // Fade Effect for portfolio scrolling
@@ -222,10 +205,95 @@ function typeWriter(i) {
 
 
 
+// Particles.js
+function loadParticleJs() {
+
+  let particleJson = {
+    particles: {
+      number: { value: 80, density: { enable: true, value_area: 800 } },
+      color: { value: "#000" },
+      shape: {
+        type: "circle",
+        stroke: { width: 0, color: "#000000" },
+        polygon: { nb_sides: 5 },
+      },
+      opacity: {
+        value: 0.5,
+        random: false,
+        anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false }
+      },
+      size: {
+        value: 3,
+        random: true,
+        anim: { enable: false, speed: 40, size_min: 0.1, sync: false }
+      },
+      line_linked: {
+        enable: true,
+        distance: 150,
+        color: "#000",
+        opacity: 0.4,
+        width: 1
+      },
+      move: {
+        enable: true,
+        speed: 6,
+        direction: "none",
+        random: false,
+        straight: false,
+        out_mode: "out",
+        bounce: false,
+        attract: { enable: false, rotateX: 600, rotateY: 1200 }
+      }
+    },
+    interactivity: {
+      detect_on: "canvas",
+      events: {
+        onhover: { enable: false, mode: "repulse" },
+        onclick: { enable: false, mode: "push" },
+        resize: true
+      },
+      modes: {
+        grab: { distance: 400, line_linked: { opacity: 1 } },
+        bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
+        repulse: { distance: 200, duration: 0.4 },
+        push: { particles_nb: 4 },
+        remove: { particles_nb: 2 }
+      }
+    },
+    retina_detect: true
+  };
+
+  particlesJS("particles-js", particleJson);
+  
+}
+
+
+
+// Loading 3-D Model
+let saturn;
+function loadSaturn() {
+  let loader = new THREE.GLTFLoader();
+  loader.crossOrigin = true;
+  loader.load("./saturn/scene.glb", function(data) {
+    let object = data.scene;
+    object.position.set(0,0,0);
+    saturn = object;
+    scene.add( object );
+
+    // After loading is completed
+    document.getElementById('loader').style.display = "none";
+    document.getElementsByTagName('body')[0].style.overflowY = "scroll";
+    typeWriter(0);
+  });
+}
+
+
+
 $(function() {
-  loadSaturn();
-  // typeWriter(0);  
-  fadeEffect();    
+  loadParticleJs();
   makeStarSphere();
+  fadeEffect();    
+  loadSaturn();
+  // typeWriter(0);  //Inside loadSaturn function
   animate();
 });

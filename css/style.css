@@ -20,7 +20,7 @@
 
 
 
-canvas {
+#bg{
     position: fixed;
     top: 0;
     left: 0;
@@ -30,9 +30,15 @@ canvas {
 
 main{
     position: absolute;
-    z-index: 99;
     margin: 0px auto;
 }
+
+
+#particles-js {
+    position: absolute !important;
+    width: 100%;
+    height: 100%;
+} 
 
 
 
@@ -76,12 +82,15 @@ body{
 .page {
     height: 100vh !important;
     margin-bottom: 150vh;
+    z-index: inherit;   
 }
 
 .page-1 {
+    position: relative;
     height: 100vh !important;
     background-color: #fff !important;
     padding-left: 5vw;
+    z-index: 96 !important;
 }
 
 .name-heading {
