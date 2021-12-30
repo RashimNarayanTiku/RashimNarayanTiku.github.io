@@ -76,7 +76,7 @@ function loadSaturn() {
     saturn = object;
     scene.add( object );
 
-    document.getElementById('loader').style.display = "none";
+    // document.getElementById('loader').style.display = "none";
     typeWriter(0);
   });
 }
