@@ -75,7 +75,9 @@ function loadSaturn() {
     object.position.set(0,0,0);
     saturn = object;
     scene.add( object );
+
     document.getElementById('loader').style.display = "none";
+    typeWriter(0);
   });
 }
 
@@ -194,6 +196,7 @@ $(window).scroll(function() {
 }
 
 
+
 // First Page animation effect
 function typeWriter(i) {
 
@@ -216,9 +219,11 @@ function typeWriter(i) {
   }
 }
 
+
+
 $(function() {
   loadSaturn();
-  typeWriter(0);  
+  // typeWriter(0);  
   fadeEffect();    
   makeStarSphere();
   animate();
