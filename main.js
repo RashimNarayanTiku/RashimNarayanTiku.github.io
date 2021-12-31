@@ -211,7 +211,7 @@ function loadParticleJs() {
   let particleJson = {
     particles: {
       number: { value: 80, density: { enable: true, value_area: 800 } },
-      color: { value: "#000" },
+      color: { value: "#000000" },
       shape: {
         type: "circle",
         stroke: { width: 0, color: "#000000" },
@@ -229,9 +229,9 @@ function loadParticleJs() {
       },
       line_linked: {
         enable: true,
-        distance: 150,
-        color: "#000",
-        opacity: 0.4,
+        distance: 200,
+        color: "#000000",
+        opacity: 0.8,
         width: 1
       },
       move: {
