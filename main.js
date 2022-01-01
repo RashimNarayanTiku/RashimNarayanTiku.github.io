@@ -1,18 +1,10 @@
-// Renderer
+// Renderer, Scene, Camera, Light
 const renderer = new THREE.WebGL1Renderer({ canvas: document.querySelector('#bg') });
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-
-
-
-// Scene and Camera
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
 camera.position.set(0,2,1200);
-
-
-
-// Lights and OrbitControls
 const pointLight = new THREE.PointLight(0xffffff);
 pointLight.position.set(20,23,12);
 scene.add(pointLight);
@@ -94,12 +86,11 @@ let pathCurve = new THREE.CatmullRomCurve3([
 
 
 
-// Scroll binding for lerping
-let oldValue = 0;
-let newValue = 0;
-let progress = 0;
-let lerpAlpha = 0.1;
-let cameraTarget = new THREE.Vector3().copy(pathCurve.getPointAt(0));
+// Scroll binding for lerping(smooth transition animation)
+let oldValue, newValue, progress, lerpAlpha, cameraTarget;
+oldValue = newValue = progress = 0;
+lerpAlpha = 0.1;
+cameraTarget = new THREE.Vector3().copy(pathCurve.getPointAt(0));
 window.addEventListener('scroll', (e) => {
 
   newValue = window.pageYOffset;
@@ -157,7 +148,7 @@ $(window).scroll(function() {
 
     let objectBottom = $(this).offset().top + $(this).outerHeight();
 
-    if (objectTop < windowBottom) { //object comes into view (scrolling down)
+    if (objectTop < windowBottom) {   //object comes into view (scrolling down)
       if ($(this).css("opacity")==0) $(this).fadeTo(500,1);
       this.querySelector('section').classList.add('fixed-position');
 
@@ -181,7 +172,7 @@ $(window).scroll(function() {
 
 
 
-// First Page animation effect
+// First Page type-writer animation effect
 function typeWriter(i) {
 
   let txt = '/Software Developer';
@@ -192,10 +183,11 @@ function typeWriter(i) {
       setTimeout(() => typeWriter(i+1), speed);
 
   } else if (i < txt.length+5) {
-    if(document.getElementById('type-writer').style.borderRight == "3px solid black")
-      document.getElementById('type-writer').style.borderRight = "3px solid white";
-    else 
+    if(document.getElementById('type-writer').style.borderRight == "3px solid black") {
+      document.getElementById('type-writer').style.borderRight = "none";
+    } else {
       document.getElementById('type-writer').style.borderRight = "3px solid black";
+    }
     setTimeout(() => typeWriter(i+1), speed+400);
 
   } else {
@@ -205,7 +197,7 @@ function typeWriter(i) {
 
 
 
-// Particles.js
+// First Page background effect (Particles.js)
 function loadParticleJs() {
 
   let particleJson = {
@@ -281,6 +273,7 @@ function loadSaturn() {
     scene.add( object );
 
     // After loading is completed
+    scroll(0,0);
     document.getElementById('loader').style.display = "none";
     document.getElementsByTagName('body')[0].style.overflowY = "scroll";
     typeWriter(0);
@@ -294,6 +287,6 @@ $(function() {
   makeStarSphere();
   fadeEffect();    
   loadSaturn();
-  // typeWriter(0);  //Inside loadSaturn function
+  // typeWriter(0);  //Inside loadSaturn() function
   animate();
 });

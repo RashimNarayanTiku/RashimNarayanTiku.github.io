@@ -38,7 +38,97 @@ main{
     position: absolute !important;
     width: 100%;
     height: 100%;
+    z-index: -1;
 } 
+
+
+.carousel-container {
+    position: absolute;
+    height: 80vh;
+    width: 90vw;
+    top: 35vh;
+    display: flex;
+    flex-direction: column;
+}
+/*   OLD CAROUSEL TRY
+.carousel-card {
+    height: 350px;
+    width: 600px;
+    background-color: #fff;
+    opacity: 1;
+    border-radius: 10px;
+    box-shadow: -1rem 0 3rem #000;
+    transition: 0.4s ease-out;
+    position: relative;
+    left: 10vw;
+}
+  
+.carousel-card:not(:first-child) {
+    margin-left: -10vw;
+} 
+.carousel-card:hover {
+    transform: translateY(-100px);
+    transition: 0.4s ease-out;
+}
+.carousel-card:hover ~ .carousel-card {
+    position: relative;
+    left: 200px;
+    transition: 0.4s ease-out;
+}
+   */
+
+
+.swiper-container {
+    width: 100vw;
+    height: 90vh;
+    margin-top: -50px;
+}
+.swiper-slide {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-general {
+    padding: 75px 0;
+    margin: 0 auto;
+    width: 800px;
+}
+.container-general .gallery-wrap {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 70vh; 
+}
+.container-general .gallery-wrap .item {
+    flex: 1;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: none;
+    transition: all 0.8s ease;
+}
+.container-general .gallery-wrap .item:hover,
+.container-general .gallery-wrap .item:active {
+    flex: 7;
+}
+
+.wrap-effect .item:first-of-type {
+    background-image: url('https://cdn.dribbble.com/users/729829/screenshots/6146136/galshir-tea-biscuit_2x.png');
+}
+.wrap-effect .item:nth-of-type(2) {
+    background-image: url('https://cdn.dribbble.com/users/729829/screenshots/6146136/galshir-tea-biscuit_2x.png');
+}
+.wrap-effect .item:nth-of-type(3) {
+    background-image: url('https://cdn.dribbble.com/users/729829/screenshots/4473482/galshir-dog-walker.gif');
+}
+.wrap-effect .item:nth-of-type(4) {
+    background-image: url('https://cdn.dribbble.com/users/729829/screenshots/5743606/gal-shir-scooter_2x.png');
+}
+.wrap-effect .item:last-of-type {
+    background-image: url('https://cdn.dribbble.com/users/729829/screenshots/4738104/galshir-storytime.png');
+}
+  
 
 
 
@@ -138,6 +228,7 @@ color:#000;
 section {
     margin: 0 auto !important;
     width: 75vw;
+    height: 100vh;
 }
 
 .fixed-position {
@@ -166,7 +257,7 @@ section {
     background: #ffffff none repeat scroll 0 0 !important;
     content: "";
     display: table;
-    margin: -8px 0px 0px 20px;
+    margin: 0px 0px 0px 20px;
     height: 2px;
     position: absolute;
     width: 13%;
