@@ -75,13 +75,17 @@ main{
     left: 200px;
     transition: 0.4s ease-out;
 }
-   */
+*/
 
 
+
+/* OLD CAROUSEL TRY-2 
 .swiper-container {
     width: 100vw;
     height: 90vh;
-    margin-top: -50px;
+    margin-top: -150px;
+    margin-left: -25vw;
+    z-index:1;
 }
 .swiper-slide {
     text-align: center;
@@ -96,8 +100,7 @@ main{
 }
 .container-general .gallery-wrap {
     display: flex;
-    flex-direction: row;
-    width: 100%;
+    width: 100vw;
     height: 70vh; 
 }
 .container-general .gallery-wrap .item {
@@ -107,12 +110,22 @@ main{
     background-size: cover;
     background-repeat: none;
     transition: all 0.8s ease;
+
+    border-radius: 10px;
+    box-shadow: -1rem 0 3rem #000;
+    opacity:0.96;
+    filter: brightness(50%);
 }
+
+.container-general .gallery-wrap .item:not(:first-child) {
+    margin-left: -5vw;
+  }
 .container-general .gallery-wrap .item:hover,
 .container-general .gallery-wrap .item:active {
     flex: 7;
+    opacity: 1;
+    filter: brightness(100%);
 }
-
 .wrap-effect .item:first-of-type {
     background-image: url('https://cdn.dribbble.com/users/729829/screenshots/6146136/galshir-tea-biscuit_2x.png');
 }
@@ -127,8 +140,13 @@ main{
 }
 .wrap-effect .item:last-of-type {
     background-image: url('https://cdn.dribbble.com/users/729829/screenshots/4738104/galshir-storytime.png');
-}
+} */
   
+
+
+
+
+
 
 
 
