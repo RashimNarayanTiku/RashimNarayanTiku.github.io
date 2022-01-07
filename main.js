@@ -42,7 +42,7 @@ function randomPointInSphere(radius) {
 function makeStarSphere() {
   let geometry = new THREE.BufferGeometry();
   let positions = [];
-  let count = 10000;
+  let count = 4000;
   let radius = 100;
   for (var i = 0; i<count; i++) {
       var vertex = randomPointInSphere(radius);

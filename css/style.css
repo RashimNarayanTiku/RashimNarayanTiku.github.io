@@ -60,7 +60,7 @@ main{
 	transform-origin: center;
 	transform-style: preserve-3d;
 	transform: translateZ(-30vw) rotateY(0);
-	animation: carousel 10s infinite cubic-bezier(0.77, 0, 0.275, 1) forwards;
+	animation: carousel 8s infinite cubic-bezier(0.77, 0, 0.275, 1) forwards;
 }
 
 .icon-cards__content.step-animation {
@@ -73,14 +73,13 @@ main{
 	left: 0;
 	right: 0;
 	bottom: 0;
-	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 	border-radius: 6px;
 	transform-origin: center;
 }
 
 .icon-cards__content img{
     border-radius: 10px !important;
-    width:60vw !important;
+    width:54vw !important;
 }
 .icon-cards__item:nth-child(1) {
 	transform: rotateY(0) translateZ(35vw);
