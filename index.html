@@ -5,6 +5,7 @@
     <title> Rashim &#8211; Software Developer </title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="icon" type="image/gif" href="img/earth.gif"  />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -12,7 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha512-dLxUelApnYxpLt6K2iomGngnHO83iUvZytA3YjDUCjT0HDOHKXnVYdf3hU4JjM8uEhxf9nD1/ey98U3t2vZ0qQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
     <script src="./particles.min.js"></script> 
-
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href='./css/style.css'>
@@ -32,10 +33,11 @@
         </div>
     </div>
 
+    
     <canvas id='bg'></canvas>
     
     <main>
-      <div style="width:100vw;" class="container-fluid p-0">
+        <div style="width:100vw;" class="container-fluid p-0">  
 
         <!-- heading section -->
         <div class="page page-1">
@@ -97,28 +99,20 @@
                         <h2><small>02</small>Projects</h2>
                     </div>
 
-                    <!-- OLD CAROUSEL TRY <div class="carousel-container">
-                        <div class="carousel-card"></div>
-                        <div class="carousel-card"></div>
-                        <div class="carousel-card"></div>
-                        <div class="carousel-card"></div>
-                    </div> -->
-
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper">
-                          <div class="swiper-slide">
-                            <div class="container-general">
-                              <div class="gallery-wrap wrap-effect">
-                                <div class="item"></div>
-                                <div class="item"></div>
-                                <div class="item"></div>
-                                <div class="item"></div>
-                                <div class="item"></div>
-                              </div>
+                    <figure class="icon-cards">
+                        <div class="icon-cards__content" style="border-radius: 30px;">
+                            <div class="icon-cards__item d-flex align-items-center justify-content-center">
+                                <a href='https://www.github.com/rashimnarayantiku/instagram' style='z-index:10000'><img src="./img/instagram.png" alt="Instagram" /></a>
                             </div>
-                          </div>
+                            <div class="icon-cards__item d-flex align-items-center justify-content-center">
+                                <a href='https://www.github.com/rashimnarayantiku/tanksgame' style='z-index:10000'><img src="./img/tanks.png" alt="Tank Game" /></a>
+                            </div>
+                            <div class="icon-cards__item d-flex align-items-center justify-content-center">
+                                <a href='https://www.github.com/rashimnarayantiku/texto' style='z-index:10000'><img src="./img/texto.png" alt="Texto text editor" /></a>
+                            </div>
                         </div>
-                    </div>
+                    </figure>  
+
                 </section>
             </div>
         </div>
