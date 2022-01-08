@@ -80,11 +80,13 @@ main{
 .icon-cards__content img{
     border-radius: 10px !important;
     width:54vw !important;
+    filter: brightness(70%);
     transition: transform .3s;
 }
 
 .icon-cards__content img:hover{
     transform: scale(1.1);
+    filter: brightness(100%);
 }
 .icon-cards__item:nth-child(1) {
 	transform: rotateY(0) translateZ(35vw);
