@@ -210,26 +210,16 @@ section {
 .section-title{
     display: inline;
 }
+
 .section-title h2{
     display: inline;
-    color:white !important;
+    color: #000;
     font-family: sans-serif;
     font-size: 750%;
     font-weight: 1000;
     text-transform: uppercase;
-    opacity: 0.12;
-}
-.section-title small {
-    font-size: 20% !important;
-}
-.section-title h2::after {
-    background: #ffffff none repeat scroll 0 0 !important;
-    content: "";
-    display: table;
-    margin: 0px 0px 0px 20px;
-    height: 2px;
-    position: absolute;
-    width: 13%;
+    text-shadow:-1px -1px 0 #808080, 1px -1px 0 #808080, -1px 1px 0 #808080, 1px 1px 0 #808080;
+    letter-spacing: -16.5px;
 }
 
 .section-heading{
