@@ -138,36 +138,32 @@ function animate() {
 
 // Fade Effect for portfolio scrolling
 function fadeEffect() {
-$(window).scroll(function() {
-  let windowTop = $(this).scrollTop();
-  let windowBottom = $(this).scrollTop() + $(this).innerHeight();
-  $(".fade").each(function() {
-    /* Check the location of each desired element */
-    let objectTop = $(this).offset().top;
-    let sectionHeight = ($(window).height())/5;
+  $(window).scroll(function() {
+    let windowTop = $(this).scrollTop();
+    let windowBottom = $(this).scrollTop() + $(this).innerHeight();
+    
+    $(".fade").each(function() {
+      /* Check the location of each desired element */
+      let objectTop = $(this).offset().top;
+      let objectBottom = $(this).offset().top + $(this).outerHeight();
+      let sectionHeight = ($(window).height())/5;
 
-    let objectBottom = $(this).offset().top + $(this).outerHeight();
+      if (objectTop < windowBottom) {   //object comes into view (scrolling down)
+        if ($(this).css("opacity")==0) $(this).fadeTo(500,1);
+        this.querySelector('section').classList.add('fixed-position');
 
-    if (objectTop < windowBottom) {   //object comes into view (scrolling down)
-      if ($(this).css("opacity")==0) $(this).fadeTo(500,1);
-      this.querySelector('section').classList.add('fixed-position');
-
-      if(objectBottom - 250 < windowTop) {
-        if ($(this).css("opacity")==1) {
-          $(this).fadeTo(500,0);
-        }
-        if(objectBottom < windowTop) {
+        if(objectBottom < windowTop) {   // object is above view
+          if ($(this).css("opacity")==1) $(this).fadeTo(500,0);
           this.querySelector('section').classList.remove('fixed-position');
         }
       }
-    }
-    else {
-      if ($(this).css("opacity")==1) $(this).fadeTo(500,0);
-      this.querySelector('section').classList.remove('fixed-position');
-    }
+      else {
+        if ($(this).css("opacity")==1) $(this).fadeTo(500,0);
+        this.querySelector('section').classList.remove('fixed-position');
+      }
 
-  });
-}).scroll(); //invoke scroll-handler on page-load  
+    });
+  }).scroll(); //invoke scroll-handler on page-load  
 }
 
 
