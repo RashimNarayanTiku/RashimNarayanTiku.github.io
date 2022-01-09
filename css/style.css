@@ -3,6 +3,8 @@
 @font-face{
     font-family: monospaceFont;
     src:url(Cousine-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face {
     font-family: ImpactFont;
@@ -11,11 +13,15 @@
 @font-face {
     font-family: firaCodeFont;
     src: url(FiraCode-Regular.woff);
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
     font-family: shamberFont;
     src: url(Shamber-ERo4.ttf);
+    font-weight: normal;
+    font-style: normal;
 }
 
 
