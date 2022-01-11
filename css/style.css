@@ -264,7 +264,7 @@ section {
     top:30vh;
     left:30vw;
     width:21vw;
-    filter: brightness(80%) blur(1px); 
+    filter: brightness(75%) blur(1px); 
 }
 .resume-img:hover{
     filter: brightness(100%) blur(1px); 

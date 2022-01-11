@@ -142,28 +142,33 @@ function fadeEffect() {
     let windowTop = $(this).scrollTop();
     let windowBottom = $(this).scrollTop() + $(this).innerHeight();
     
+    // Check the location of each desired element 
     $(".fade").each(function() {
-      /* Check the location of each desired element */
       let objectTop = $(this).offset().top;
       let objectBottom = $(this).offset().top + $(this).outerHeight();
-      let sectionHeight = ($(window).height())/5;
 
-      if (objectTop < windowBottom) {   //object comes into view (scrolling down)
+      //object above the view
+      if (objectTop < windowBottom && objectBottom < windowTop) {   
+          if ($(this).css("opacity")==1) $(this).fadeTo(100,0);
+          setTimeout(() => {
+            this.querySelector('section').classList.remove('fixed-position');
+          }, 200);
+      }
+      //object comes into view
+      else if (objectTop < windowBottom) {    
         if ($(this).css("opacity")==0) $(this).fadeTo(500,1);
         this.querySelector('section').classList.add('fixed-position');
-
-        if(objectBottom < windowTop) {   // object is above view
-          if ($(this).css("opacity")==1) $(this).fadeTo(500,0);
-          this.querySelector('section').classList.remove('fixed-position');
-        }
       }
+      // object below the view
       else {
-        if ($(this).css("opacity")==1) $(this).fadeTo(500,0);
-        this.querySelector('section').classList.remove('fixed-position');
+        if ($(this).css("opacity")==1) $(this).fadeTo(100,0);
+        setTimeout(() => {
+          this.querySelector('section').classList.remove('fixed-position');
+        }, 200);
       }
 
     });
-  }).scroll(); //invoke scroll-handler on page-load  
+  }).scroll(); //invoke scroll-handler on page-load
 }
 
 
