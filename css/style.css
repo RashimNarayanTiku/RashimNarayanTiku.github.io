@@ -3,8 +3,6 @@
 @font-face{
     font-family: monospaceFont;
     src:url(Cousine-Regular.ttf);
-    font-weight: normal;
-    font-style: normal;
 }
 @font-face {
     font-family: ImpactFont;
@@ -13,15 +11,11 @@
 @font-face {
     font-family: firaCodeFont;
     src: url(FiraCode-Regular.woff);
-    font-weight: normal;
-    font-style: normal;
 }
 
 @font-face {
     font-family: shamberFont;
     src: url(Shamber-ERo4.ttf);
-    font-weight: normal;
-    font-style: normal;
 }
 
 
@@ -86,7 +80,7 @@ main{
 .icon-cards__content img{
     border-radius: 10px !important;
     width:54vw !important;
-    filter: brightness(70%);
+    filter: brightness(90%);
     transition: transform .3s;
 }
 
@@ -128,15 +122,14 @@ html::-webkit-scrollbar {
 
 body{
     background-color: #000;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 #loader {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000;
+    z-index: 10000;
     background-color: #fff;
     width: 100vw;
     height: 100vh;
@@ -265,6 +258,42 @@ section {
     padding-right: 2%;
     margin: 0 auto;
 }
+
+.resume-img{
+    position: absolute;
+    top:30vh;
+    left:30vw;
+    width:21vw;
+    filter: brightness(80%) blur(1px); 
+}
+.resume-img:hover{
+    filter: brightness(100%) blur(1px); 
+}
+
+.big-resume-container{
+    display: none;
+    position:fixed;
+    top:0; 
+    left:0;
+    z-index: 2000;
+    background-color: rgba(0, 0, 0, 0.512);
+    height:100vh;
+    width: 100vw;
+}
+.resume-img-big{
+    position: absolute;
+    left:32vw;
+    height: 100vh;
+}
+
+
+
+
+
+
+
+
+
 /* ===================================== v2 end ============================================ */
 
 

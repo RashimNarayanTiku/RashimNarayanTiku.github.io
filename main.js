@@ -269,7 +269,6 @@ function loadSaturn() {
     scene.add( object );
 
     // After loading is completed
-    scroll(0,0);
     document.getElementById('loader').style.display = "none";
     document.getElementsByTagName('body')[0].style.overflowY = "scroll";
     typeWriter(0);
@@ -277,11 +276,28 @@ function loadSaturn() {
 }
 
 
+function resumeAnimation() {
+  $('.big-resume-container').on('click', function() {
+    $(this).fadeTo(500,0);
+    setTimeout(() => {
+      this.style.display = 'none';
+      document.getElementsByTagName('body')[0].style.overflowY = "scroll";
+    }, 500);
+  });
+  $('.resume-img').on('click', function(){
+    document.getElementsByTagName('body')[0].style.overflowY = "hidden";
+    $('.big-resume-container').css('opacity',0);
+    $('.big-resume-container').css('display','block');
+    $('.big-resume-container').fadeTo(500,1);
+  });
+}
+
 
 $(function() {
   loadParticleJs();
   makeStarSphere();
   fadeEffect();    
+  resumeAnimation();
   loadSaturn();
   // typeWriter(0);  //Inside loadSaturn() function
   animate();
