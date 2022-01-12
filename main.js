@@ -177,7 +177,7 @@ function fadeEffect() {
 function typeWriter(i) {
 
   let txt = '/Software Developer';
-  const speed = 100;
+  const speed = 130;
 
   if (i < txt.length) {
       document.getElementById("type-writer").innerHTML += txt.charAt(i);
@@ -266,8 +266,13 @@ function loadParticleJs() {
 let saturn;
 function loadSaturn() {
   let loader = new THREE.GLTFLoader();
+
+  const dracoLoader = new THREE.DRACOLoader();
+  dracoLoader.setDecoderPath( 'https://unpkg.com/three@0.128.0/examples/js/libs/draco/' );
+  loader.setDRACOLoader( dracoLoader );
+
   loader.crossOrigin = true;
-  loader.load("./saturn/scene.glb", function(data) {
+  loader.load("./saturn/scene-compressed.glb", function(data) {
     let object = data.scene;
     object.position.set(0,0,0);
     saturn = object;
@@ -281,6 +286,8 @@ function loadSaturn() {
 }
 
 
+
+// Resume
 function resumeAnimation() {
   $('.big-resume-container').on('click', function() {
     $(this).fadeTo(500,0);
@@ -296,6 +303,7 @@ function resumeAnimation() {
     $('.big-resume-container').fadeTo(500,1);
   });
 }
+
 
 
 $(function() {
