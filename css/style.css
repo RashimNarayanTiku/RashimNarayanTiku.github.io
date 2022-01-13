@@ -287,39 +287,31 @@ section {
 }
 
 
-
-
-
-
-
-
-
 /* ===================================== v2 end ============================================ */
 
 
-.social-links-3{
-    color:#9e9d9d;
+.page-5 p {
+    font-size: 2vw;
+    color:#808080
 }
-.social-links-3 li {
-    margin-left: -17%;
-    padding-right: 0%;
-    margin-right: 11%;
-    list-style-type: none;
+.contacts a {
+    color: #808080 !important;
+}
+.contacts i {
+    font-size: 6vw !important;
+}
+.contacts{
+    display:flex;
+    justify-content: space-around;
+    margin-top: 10vh;
 }
 
-.social-3 a{
-    color:#808080;
-}
-
-.social-3 i{
-    color:#808080;
-    size:250%;
-}
-.social-3 a:hover{
-    color:#fff;
+.contacts div :hover{
+    color: rgb(245, 245, 245) !important;
     text-decoration: none;
 }
-*/
+
+
 
 /* ----------------------------------------Contact---------------------------------------- */
 
