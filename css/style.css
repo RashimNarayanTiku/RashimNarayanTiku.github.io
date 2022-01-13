@@ -42,8 +42,8 @@ body{
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100vw !important;
+    height: 100vh !important;
 }
 
 main{
@@ -92,7 +92,7 @@ main{
 }
 .icon-cards__content img {
     border-radius: 10px !important;
-    width:54vw !important;
+    width:65vw !important;
     filter: brightness(90%);
     transition: transform .3s;
 }
@@ -259,10 +259,10 @@ section {
     top:30vh;
     left:27vw;
     width:21vw;
-    filter: brightness(75%) blur(1px); 
+    filter: brightness(75%); 
 }
 .resume-img:hover{
-    filter: brightness(100%) blur(1px); 
+    filter: brightness(100%); 
 }
 
 .big-resume-container{
@@ -300,7 +300,7 @@ section {
     margin-top: 15vh;
 }
 
-.contacts div :hover{
+.contacts div :hover, contacts div :active{
     color: rgb(245, 245, 245) !important;
     text-decoration: none;
 }
@@ -321,9 +321,93 @@ section {
 
 
 
+
+@media (max-width: 768px) {
+
+    section {
+        width:80vw !important;
+    }
+    .name-heading{
+        font-size: 28vw !important;
+    }
+    #type-writer {
+        font-size: 5vw !important;
+    }
+    .social{
+        font-size: 4vw !important;
+        margin-left: 2%;
+    }
+    #page-1-line {
+        margin-top: 10vw !important;
+        margin-left: -20px;
+        width: 90%;
+    }
+
+    .section-content{
+        margin-top:10vw !important;
+    }
+
+    .skills img{
+        margin-left: 10%;
+        margin-bottom: 10%;
+    }
+
+    .icon-cards__content img {
+        width:80vw !important;
+    }
+    .icon-cards{
+        margin-left:13vw;
+    }
+
+    .section-title h2{
+        font-size: 18vw;
+        margin-top: 10vw !important;
+        margin-left: -6vw;
+    }
+
+    /* Resume section */
+    .resume-img{
+        top:35vh;
+        left:20vw;
+        width:40vw;
+    }
+
+    .big-resume-container{
+        height:100vh;
+        width: 100vw;
+    }
+    .resume-img-big{
+        left:0vw !important;
+        width: 100vw  !important;
+    }
+
+    .page-5 p{
+        font-size: 3.8vw;
+        color: #808080;
+        margin-top: 7vw;
+    }
+
+    .contacts {
+        margin-top: 18vw !important;
+    }
+    .contacts i{
+        font-size: 15vw !important;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+    .resume-img-big{
+        left:0vw !important;
+        top:15vh;
+        width: 100vw !important;
+        height: fit-content;
+    }
+}
 /* 
 
-@media (max-width: 568px) {
+@media (max-width: 768px) {
 
 #sidebar {
     margin-left: -12rem;
