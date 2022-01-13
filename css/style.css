@@ -110,6 +110,9 @@ main{
 
 /* ===================================== v2 start ============================================ */
 
+*:focus {
+    outline: none;
+}
 
 html{
     scroll-behavior: smooth;
@@ -251,6 +254,7 @@ section {
     font-weight: 500;
     letter-spacing: 0.02em;
     font-size: 1.4em;
+    padding-right: 1%;
 }
 
 
@@ -287,11 +291,8 @@ section {
 }
 
 
-/* ===================================== v2 end ============================================ */
-
-
 .page-5 p {
-    font-size: 2vw;
+    font-size: 1.9vw;
     color:#808080
 }
 .contacts a {
@@ -303,7 +304,7 @@ section {
 .contacts{
     display:flex;
     justify-content: space-around;
-    margin-top: 10vh;
+    margin-top: 15vh;
 }
 
 .contacts div :hover{
@@ -311,42 +312,9 @@ section {
     text-decoration: none;
 }
 
-
-
-/* ----------------------------------------Contact---------------------------------------- */
-
-*:focus {
-  outline: none;
-}
 #contact-box {
-    width: 90%;
-    box-sizing: border-box;
-    border-radius: 2px;
-    margin-top: 1%;
     font-family: "monospaceFont",sans-serif;
 }
-
-.right {
-    display: inline-block;
-    color: rgb(177, 176, 176);
-    color:grey;
-    font-family: "monospaceFont", sans-serif;
-    padding: 30px 0px 0px 200px;
-    height: 50%;
-}
-.right ul{
-    padding-left: 0;
-    margin-left: 0%;
-}
-  
-.left {
-    display: inline-block;
-    font-family: "monospaceFont", sans-serif;
-    margin-top: 10%;
-    width: 20%;
-    height: 50%;
-  }
-
 
 .google-maps{
     width: 100%;
@@ -355,12 +323,16 @@ section {
 }
 
 .copyright{
-    margin-top: 3%;
+    display:flex;
+    justify-content: center;
     font-family: "monospaceFont", sans-serif;
-    margin-left: 40%;
+    font-size: 85%;
+    width:100vw;
     color:grey;
-    background-color: black;
+    background-color: #000;
 }
+
+
 
 /* 
 
