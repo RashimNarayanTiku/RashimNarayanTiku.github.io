@@ -100,7 +100,7 @@ main{
 }
 .icon-cards__content img {
     border-radius: 10px !important;
-    width:65vw !important;
+    width:55vw !important;
     filter: brightness(90%);
     transition: transform .3s;
 }
@@ -409,6 +409,36 @@ section {
 
 @media (max-width: 576px) {
 
+    #particles-js {
+        width: 95vw !important;
+    }
+
+    .row{
+        margin-right: 0 !important;
+    }
+
+    section{
+        width:85vw !important
+    }
+    .skills img{
+        width:22vw !important;
+        margin-left:0;
+        margin-bottom: 10%;
+    }
+
+    .section-title h2{
+        font-size: 22vw !important;
+        margin-top: 15vw !important;
+    }
+
+    .icon-cards {
+        margin-left: 18vw !important;
+    }
+    .icon-cards__content img {
+        width: 95vw !important;
+        height: 29vh;
+    }
+
     .name-heading{
         font-size: 30vw !important;
         margin-top: 10vw;
@@ -436,6 +466,18 @@ section {
         top:15vh;
         width: 100vw !important;
         height: fit-content;
+    }
+
+    .page-5 p {
+        font-size: 5vw;
+    }
+
+    .contacts span {
+        opacity: 0 !important;
+    }
+    .contacts i {
+        padding:0 !important;
+        font-size: 22vw !important;
     }
 }
 /* 
