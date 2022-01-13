@@ -19,7 +19,25 @@
 }
 
 
-        
+*:focus {
+    outline: none;
+}
+
+html{
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
+}
+html::-webkit-scrollbar { 
+    display: none;
+} 
+
+body{
+    background-color: #000;
+    overflow: hidden;
+}
+
+
 #bg{
     position: fixed;
     top: 0;
@@ -42,7 +60,6 @@ main{
 } 
 
 
-
 /* Projects Carousel */
 .icon-cards {
 	position: relative;
@@ -52,7 +69,6 @@ main{
 	perspective: 1000px;
 	transform-origin: center;
 }
-
 .icon-cards__content {
 	position: absolute;
 	width: 100%;
@@ -62,11 +78,9 @@ main{
 	transform: translateZ(-30vw) rotateY(0);
 	animation: carousel 8s infinite cubic-bezier(0.77, 0, 0.275, 1) forwards;
 }
-
 .icon-cards__content.step-animation {
 	animation: carousel 8s infinite steps(1) forwards;
 }
-
 .icon-cards__item {
 	position: absolute;
 	top: 0;
@@ -76,14 +90,12 @@ main{
 	border-radius: 6px;
 	transform-origin: center;
 }
-
-.icon-cards__content img{
+.icon-cards__content img {
     border-radius: 10px !important;
     width:54vw !important;
     filter: brightness(90%);
     transition: transform .3s;
 }
-
 .icon-cards__content img:hover{
     transform: scale(1.1);
     filter: brightness(100%);
@@ -97,7 +109,6 @@ main{
 .icon-cards__item:nth-child(3) {
 	transform: rotateY(240deg) translateZ(35vw);
 }
-
 @keyframes carousel {
 	0%, 17.5% {transform: translateZ(-35vw) rotateY(0);}
 	27.5%, 45% {transform: translateZ(-35vw) rotateY(-120deg);}
@@ -105,28 +116,6 @@ main{
 	82.5%, 100% {transform: translateZ(-35vw) rotateY(-360deg);}
 }
 
-
-
-
-/* ===================================== v2 start ============================================ */
-
-*:focus {
-    outline: none;
-}
-
-html{
-    scroll-behavior: smooth;
-    -ms-overflow-style: none;
-    scrollbar-width: none; 
-}
-html::-webkit-scrollbar { 
-    display: none;
-} 
-
-body{
-    background-color: #000;
-    overflow: hidden;
-}
 
 #loader {
     position: fixed;
@@ -153,6 +142,9 @@ body{
     z-index: inherit;   
 }
 
+
+
+/* First Page Section */
 .page-1 {
     position: relative;
     height: 100vh !important;
@@ -216,12 +208,8 @@ section {
     transform: translate(-50%, -50%);
 }
 
-.section-title{
-    display: inline;
-}
 
 .section-title h2{
-    display: inline;
     color: #000;
     font-family: sans-serif;
     font-size: 750%;
@@ -229,6 +217,7 @@ section {
     text-transform: uppercase;
     text-shadow:-1px -1px 0 #808080, 1px -1px 0 #808080, -1px 1px 0 #808080, 1px 1px 0 #808080;
     letter-spacing: -16.5px;
+    margin-top: 3% !important;
 }
 
 .section-heading{
@@ -257,12 +246,14 @@ section {
     padding-right: 1%;
 }
 
-
 .skills img{
     padding-right: 2%;
     margin: 0 auto;
 }
 
+
+
+/* Resume section */
 .resume-img{
     position: absolute;
     top:30vh;
@@ -291,6 +282,8 @@ section {
 }
 
 
+
+/* Contact Section */
 .page-5 p {
     font-size: 1.9vw;
     color:#808080
@@ -314,12 +307,6 @@ section {
 
 #contact-box {
     font-family: "monospaceFont",sans-serif;
-}
-
-.google-maps{
-    width: 100%;
-    display:block;
-    margin-top:2%;
 }
 
 .copyright{
