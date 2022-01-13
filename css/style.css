@@ -46,6 +46,14 @@ body{
     height: 100vh !important;
 }
 
+#particle-js{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw !important;
+    height: 100vh !important;
+}
+
 main{
     position: absolute;
     margin: 0px auto;
@@ -398,6 +406,29 @@ section {
 
 
 @media (max-width: 576px) {
+
+    .name-heading{
+        font-size: 30vw !important;
+        margin-top: 10vw;
+        margin-right: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    #type-writer{
+        font-size: 8.3vw !important;
+    }
+
+    .social{
+        font-size: 7vw !important;
+        margin-left: 2%;
+    }
+
+    #page-1-line {
+        margin-top: 15vw !important;
+        margin-left: -17px;
+        width: 95%;
+    }
+
     .resume-img-big{
         left:0vw !important;
         top:15vh;
