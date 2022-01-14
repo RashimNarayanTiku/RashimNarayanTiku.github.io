@@ -302,7 +302,7 @@ section {
     color: #808080 !important;
 }
 .contacts i {
-    font-size: 6vw !important;
+    font-size: 8vw !important;
 }
 .contacts{
     display:flex;
@@ -310,7 +310,7 @@ section {
     margin-top: 15vh;
 }
 
-.contacts div :hover, contacts div :active{
+.contacts div :hover{
     color: rgb(245, 245, 245) !important;
     text-decoration: none;
 }
