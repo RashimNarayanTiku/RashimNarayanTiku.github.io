@@ -464,6 +464,13 @@ section {
         width: 95%;
     }
 
+    .section-content{
+        margin-top:0 !important;
+    }
+    .section-heading{
+        margin-top: 0 !important;
+    }
+
     .skills img{
         width:20vw !important;
         margin-left:0;
