@@ -471,6 +471,10 @@ section {
         margin-top: 0 !important;
     }
 
+    .skills{
+        padding-top: 1rem !important;
+    }
+
     .skills img{
         width:20vw !important;
         margin-left:0;
