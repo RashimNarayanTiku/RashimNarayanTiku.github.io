@@ -498,6 +498,13 @@ section {
         height: 70vh !important;
     }
 
+    .contacts .fa-linkedin {
+        margin-left:6vw !important;
+    } 
+    .contacts .fa-twitter {
+        margin-left:10vw !important;
+    } 
+
     .page-5 p {
         font-size: 5vw;
     }
