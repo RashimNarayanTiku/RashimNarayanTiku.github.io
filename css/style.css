@@ -417,27 +417,30 @@ section {
         margin-right: 0 !important;
     }
 
+    #loader-content {
+        top: 40vh;
+        width:100vw;
+    }
+    #loader-content > *{
+        font-size: 130%; 
+        margin-left:40vw;
+    }
+
+    #loader-content img{
+        width:30% !important;
+        margin-left:2.5vw !important;
+    }
+
     section{
         width:85vw !important
     }
-    .skills img{
-        width:22vw !important;
-        margin-left:0;
-        margin-bottom: 10%;
-    }
 
     .section-title h2{
-        font-size: 22vw !important;
+        font-size: 24vw !important;
+        letter-spacing: -10px;
         margin-top: 15vw !important;
     }
 
-    .icon-cards {
-        margin-left: 18vw !important;
-    }
-    .icon-cards__content img {
-        width: 95vw !important;
-        height: 29vh;
-    }
 
     .name-heading{
         font-size: 30vw !important;
@@ -461,11 +464,27 @@ section {
         width: 95%;
     }
 
+    .skills img{
+        width:20vw !important;
+        margin-left:0;
+        margin-bottom: 10%;
+    }
+
+
+    .icon-cards {
+        margin-left: 18vw !important;
+    }
+    .icon-cards__content img {
+        width: 95vw !important;
+        height: 29vh;
+    }
+
+
     .resume-img-big{
         left:0vw !important;
-        top:15vh;
+        top:10vh;
         width: 100vw !important;
-        height: fit-content;
+        height: fit-content ;
     }
 
     .page-5 p {
