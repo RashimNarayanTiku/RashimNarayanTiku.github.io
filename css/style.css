@@ -326,7 +326,10 @@ section {
     font-size: 85%;
     width:100vw;
     color:grey;
-    background-color: #000;
+    background-color: transparent;
+    margin-bottom: 1% !important;
+
+
 }
 
 
@@ -436,11 +439,10 @@ section {
     }
 
     .section-title h2{
-        font-size: 24vw !important;
+        font-size: 23vw !important;
         letter-spacing: -10px;
         margin-top: 15vw !important;
     }
-
 
     .name-heading{
         font-size: 30vw !important;
@@ -513,7 +515,10 @@ section {
         opacity: 0 !important;
     }
     .contacts i {
-        padding:0 !important;
+        padding: 0 !important;
         font-size: 22vw !important;
+    }
+    .copyright{
+        margin-bottom: 3% !important;
     }
 }
