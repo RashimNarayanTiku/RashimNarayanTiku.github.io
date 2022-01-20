@@ -307,10 +307,14 @@ function resumeAnimation() {
 function changeLoaderText() {
   setTimeout(() => {
     document.getElementById('loading-text').innerHTML = 'You won\'t be dissapointed...';
-    let margin_left = screen.width > 586 ? '40vw' : '20vw';
+    let margin_left = screen.width > 586 ? '40vw' : '18vw';
     document.getElementById('loading-text').parentNode.style.marginLeft = margin_left;
   
   }, 20*1000);
+
+  setTimeout(() => {
+    document.getElementById('loading-text').innerHTML = 'Well that\'s embarrassing...';  
+  }, 45*1000);
 }
 
 $(function() {
