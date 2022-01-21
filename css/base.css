@@ -96,11 +96,7 @@ main{
     transition: transform .3s;
 }
 .icon-cards__content img:hover{
-    transform: scale(1.2);
-    filter: brightness(100%);
-}
-.icon-cards__content img:active{
-    transform: scale(1.2);
+    transform: scale(1.15);
     filter: brightness(100%);
 }
 .icon-cards__item:nth-child(1) {
@@ -137,7 +133,7 @@ main{
 #loader-content > *{
     font-size: 130%; 
     margin-left:46vw;
-    font-family: Impact !important;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
 }
 
 .page {
