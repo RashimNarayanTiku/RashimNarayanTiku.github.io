@@ -240,7 +240,7 @@ section {
 #name {
     color: rgb(26, 26, 26);
     background-color: rgb(223, 219, 219);
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Oswald', Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-transform: uppercase;
     font-weight: 500;
     letter-spacing: 0.02em;
@@ -420,7 +420,6 @@ section {
         font-size: 130%; 
         margin-left:37vw;
         white-space: pre-line;
-        font-family: 'Oswald' !important;
     }
 
     #loader-content img{
