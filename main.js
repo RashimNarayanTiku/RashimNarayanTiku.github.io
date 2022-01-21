@@ -304,19 +304,29 @@ function resumeAnimation() {
   });
 }
 
+//Loader text changes  
 function changeLoaderText() {
+
   setTimeout(() => {
     document.getElementById('loading-text').innerHTML = 'You won\'t be dissapointed...';
-    let margin_left = screen.width > 586 ? '41vw' : '18vw';
+    let margin_left = screen.width > 586 ? '41vw' : '16vw';
     document.getElementById('loading-text').parentNode.style.marginLeft = margin_left;
   }, 20*1000);
 
-  setTimeout(() => {
-    document.getElementById('loading-text').innerHTML = 'Well that\'s embarrassing...';  
-  }, 40*1000);
 
   setTimeout(() => {
+    document.getElementById('loading-text').innerHTML = 'Well that\'s embarrassing...';  
+    if(screen.width < 586) 
+      document.getElementById('loading-text').parentNode.style.marginLeft = '18vw';
+
+  }, 40*1000);
+
+  
+  setTimeout(() => {
     document.getElementById('loading-text').innerHTML = 'Who wants ice-cream! 🍦';  
+    if(screen.width < 586) 
+      document.getElementById('loading-text').parentNode.style.marginLeft = '18vw';
+
   },60*1000);
 
 }

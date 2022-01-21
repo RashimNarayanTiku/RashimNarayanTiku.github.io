@@ -4,10 +4,7 @@
     font-family: monospaceFont;
     src:url(Cousine-Regular.ttf);
 }
-@font-face {
-    font-family: ImpactFont;
-    src: url(impact.ttf);
-}
+
 @font-face {
     font-family: firaCodeFont;
     src: url(FiraCode-Regular.woff);
@@ -99,7 +96,11 @@ main{
     transition: transform .3s;
 }
 .icon-cards__content img:hover{
-    transform: scale(1.1);
+    transform: scale(1.2);
+    filter: brightness(100%);
+}
+.icon-cards__content img:active{
+    transform: scale(1.2);
     filter: brightness(100%);
 }
 .icon-cards__item:nth-child(1) {
@@ -136,6 +137,7 @@ main{
 #loader-content > *{
     font-size: 130%; 
     margin-left:46vw;
+    font-family: Impact !important;
 }
 
 .page {
@@ -242,7 +244,7 @@ section {
 #name {
     color: rgb(26, 26, 26);
     background-color: rgb(223, 219, 219);
-    font-family: 'Oswald', Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-transform: uppercase;
     font-weight: 500;
     letter-spacing: 0.02em;
