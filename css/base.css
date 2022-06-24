@@ -479,6 +479,18 @@ section {
     #scroll-down-indicator {
         border: 2px solid #000;
         top: 85%;
+        animation: animateScroll2 1.5s linear infinite;
+    }
+    @keyframes animateScroll2 {
+        0% {
+            top: 85%;
+        }
+        50% {
+            top: 86%;
+        }
+        100% {
+            top: 85%;
+        }
     }
 
     section{
