@@ -45,6 +45,41 @@ body{
     height: 100vh !important;
 }
 
+#scroll-down-indicator {
+	border: 2px solid #000;
+	border-radius: 50px;
+	height: 3em;
+	width: 2em;
+	position: absolute;
+	top: 91%;
+	left: 47%;
+}
+
+#scroll-down-indicator:before {
+    content: "";
+    position: absolute;
+    width:0.42em;
+    height: 0.42em;
+    background: #000;
+    margin: auto;
+    left: -0.2px;
+    right: 0;
+    top: 0.5em;
+    border-radius: 50%;
+    animation: animate 1.2s linear infinite;
+}
+@keyframes animate {
+    0% {
+        opacity: 1;
+        top: 0.5em;
+    }
+    100% {
+        opacity: 0;
+        top: 2em;
+        transform: scale(0.9);
+    }
+}
+
 main{
     position: absolute;
     margin: 0px auto;
