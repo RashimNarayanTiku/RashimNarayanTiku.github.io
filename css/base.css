@@ -53,6 +53,19 @@ body{
 	position: absolute;
 	top: 90%;
 	left: 47%;
+    animation: animateScroll 1.5s linear infinite;
+    opacity: 0;
+}
+@keyframes animateScroll {
+    0% {
+        top: 90%;
+    }
+    50% {
+        top: 91%;
+    }
+    100% {
+        top: 90%;
+    }
 }
 
 #scroll-down-indicator:before {
@@ -66,16 +79,16 @@ body{
     right: 0;
     top: 0.5em;
     border-radius: 50%;
-    animation: animate 1.2s linear infinite;
+    animation: animateBefore 1.3s linear infinite;
 }
 
-@keyframes animate {
+@keyframes animateBefore {
     0% {
         opacity: 1;
         top: 0.5em;
     }
     100% {
-        opacity: 0;
+        /* opacity: 0; */
         top: 2em;
         transform: scale(0.9);
     }
@@ -284,6 +297,11 @@ section {
     padding-right: 1%;
 }
 
+.skills {
+    position: absolute;
+    width:100%;
+}
+
 .skills img{
     padding-right: 2%;
     margin: 0 auto;
@@ -315,7 +333,7 @@ section {
 }
 .resume-img-big{
     position: absolute;
-    left:32vw;
+    left:25vw;
     height: 100vh;
 }
 

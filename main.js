@@ -161,6 +161,10 @@ function fadeEffect() {
 // First Page type-writer animation effect
 function typeWriter(i) {
 
+  if(i === undefined) {
+    i = 0;
+  }
+
   let txt = '/Software Developer';
   const speed = 130;
 
@@ -179,6 +183,14 @@ function typeWriter(i) {
   } else {
     document.getElementById('type-writer').style.borderRight = "none";
   }
+  
+}
+
+function showScrollDownIndicator() {
+  setTimeout(() => {
+    console.log("SCROLLDOWNINDICATOR RUNNING");
+    $("#scroll-down-indicator").fadeTo(700,1);
+  }, 2500);
 }
 
 
@@ -264,6 +276,7 @@ function loadSaturn() {
     document.getElementById('loader').style.display = "none";
     document.getElementsByTagName('body')[0].style.overflowY = "scroll";
     typeWriter(0);
+    showScrollDownIndicator();
   });
 }
 
@@ -326,7 +339,7 @@ $(function() {
   fadeEffect();    
   resumeAnimation();
 
-  loadSaturn();
+  loadSaturn(typeWriter);
   // typeWriter(0);  //Inside loadSaturn() function
   animate();
 });
