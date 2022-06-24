@@ -51,8 +51,6 @@ body{
 	height: 3em;
 	width: 2em;
 	position: absolute;
-    background-color: #fff;
-    z-index: 1;
 	top: 90%;
 	left: 47%;
 }

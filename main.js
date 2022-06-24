@@ -94,26 +94,11 @@ cameraTarget = new THREE.Vector3().copy(pathCurve.getPointAt(0));
 window.addEventListener('scroll', (e) => {
 
   newValue = window.pageYOffset;
-
   progress += (newValue - oldValue) * 0.0002;
-  // let speed = ((newValue > oldValue) ? 0.01 : -0.01);
-
-  // if(progress == 0 && speed < 0) {
-  //   console.log('Progress is 0');
-  //   progress = 0.99
-  // }
-  // progress += speed;
-  // progress = progress % 1; 
 
   if(!(progress >= 0 && progress < 1)) {
-
     if(newValue > oldValue) progress = 0;
     else progress = 0.99; 
-    // let speed = ((newValue > oldValue) ? 0.1 : -0.1);
-    // progress += speed;
-    console.log('progress:',progress);
-    console.log("NOT NORMAL ")
-    // progress = 0;
   }
 
   cameraTarget.copy(pathCurve.getPointAt(progress));
@@ -197,67 +182,64 @@ function typeWriter(i) {
 }
 
 
-
 // First Page background effect (Particles.js)
+let particleJson = {
+  particles: {
+    number: { value: 80, density: { enable: true, value_area: 800 } },
+    color: { value: "#000000" },
+    shape: {
+      type: "circle",
+      stroke: { width: 0, color: "#000000" },
+      polygon: { nb_sides: 5 },
+    },
+    opacity: {
+      value: 0.5,
+      random: false,
+      anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false }
+    },
+    size: {
+      value: 3,
+      random: true,
+      anim: { enable: false, speed: 40, size_min: 0.1, sync: false }
+    },
+    line_linked: {
+      enable: true,
+      distance: 200,
+      color: "#000000",
+      opacity: 0.8,
+      width: 1
+    },
+    move: {
+      enable: true,
+      speed: 6,
+      direction: "none",
+      random: false,
+      straight: false,
+      out_mode: "out",
+      bounce: false,
+      attract: { enable: false, rotateX: 600, rotateY: 1200 }
+    }
+  },
+  interactivity: {
+    detect_on: "canvas",
+    events: {
+      onhover: { enable: false, mode: "repulse" },
+      onclick: { enable: false, mode: "push" },
+      resize: true
+    },
+    modes: {
+      grab: { distance: 400, line_linked: { opacity: 1 } },
+      bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
+      repulse: { distance: 200, duration: 0.4 },
+      push: { particles_nb: 4 },
+      remove: { particles_nb: 2 }
+    }
+  },
+  retina_detect: true
+};
+
 function loadParticleJs() {
-
-  let particleJson = {
-    particles: {
-      number: { value: 80, density: { enable: true, value_area: 800 } },
-      color: { value: "#000000" },
-      shape: {
-        type: "circle",
-        stroke: { width: 0, color: "#000000" },
-        polygon: { nb_sides: 5 },
-      },
-      opacity: {
-        value: 0.5,
-        random: false,
-        anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false }
-      },
-      size: {
-        value: 3,
-        random: true,
-        anim: { enable: false, speed: 40, size_min: 0.1, sync: false }
-      },
-      line_linked: {
-        enable: true,
-        distance: 200,
-        color: "#000000",
-        opacity: 0.8,
-        width: 1
-      },
-      move: {
-        enable: true,
-        speed: 6,
-        direction: "none",
-        random: false,
-        straight: false,
-        out_mode: "out",
-        bounce: false,
-        attract: { enable: false, rotateX: 600, rotateY: 1200 }
-      }
-    },
-    interactivity: {
-      detect_on: "canvas",
-      events: {
-        onhover: { enable: false, mode: "repulse" },
-        onclick: { enable: false, mode: "push" },
-        resize: true
-      },
-      modes: {
-        grab: { distance: 400, line_linked: { opacity: 1 } },
-        bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
-        repulse: { distance: 200, duration: 0.4 },
-        push: { particles_nb: 4 },
-        remove: { particles_nb: 2 }
-      }
-    },
-    retina_detect: true
-  };
-
   particlesJS("particles-js", particleJson);
-  
 }
 
 
@@ -334,10 +316,16 @@ function changeLoaderText() {
 $(function() {
 
   changeLoaderText();
+  
+  if(window.innerWidth <= 576) {
+    particleJson.particles.number.value = 50;
+  }
   loadParticleJs();
+  
   makeStarSphere();
   fadeEffect();    
   resumeAnimation();
+
   loadSaturn();
   // typeWriter(0);  //Inside loadSaturn() function
   animate();
