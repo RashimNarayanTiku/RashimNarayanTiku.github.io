@@ -46,12 +46,14 @@ body{
 }
 
 #scroll-down-indicator {
-	border: 2px solid #000;
+	border: 2.5px solid #000;
 	border-radius: 50px;
 	height: 3em;
 	width: 2em;
 	position: absolute;
-	top: 91%;
+    background-color: #fff;
+    z-index: 1;
+	top: 90%;
 	left: 47%;
 }
 
@@ -68,6 +70,7 @@ body{
     border-radius: 50%;
     animation: animate 1.2s linear infinite;
 }
+
 @keyframes animate {
     0% {
         opacity: 1;
@@ -460,6 +463,11 @@ section {
     #loader-content img{
         width:30% !important;
         margin-left:2.5vw !important;
+    }
+
+    #scroll-down-indicator {
+        border: 2px solid #000;
+        top: 85%;
     }
 
     section{
