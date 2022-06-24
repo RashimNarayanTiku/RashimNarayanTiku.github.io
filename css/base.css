@@ -88,7 +88,6 @@ body{
         top: 0.5em;
     }
     100% {
-        /* opacity: 0; */
         top: 2em;
         transform: scale(0.9);
     }
@@ -297,10 +296,6 @@ section {
     padding-right: 1%;
 }
 
-.skills {
-    position: absolute;
-    width:100%;
-}
 
 .skills img{
     padding-right: 2%;
