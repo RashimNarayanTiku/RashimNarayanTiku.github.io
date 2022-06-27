@@ -58,8 +58,8 @@ function makeStarSphere() {
 
 
 // Camera Animation Path
-let pathCurve = new THREE.CatmullRomCurve3([
-  new THREE.Vector3(20,2,140),
+let pathCurveList = [
+new THREE.Vector3(20,2,140),
   new THREE.Vector3(-30,2,140),
   new THREE.Vector3(-30,2,40),
   new THREE.Vector3(-30,2,30),
@@ -82,7 +82,8 @@ let pathCurve = new THREE.CatmullRomCurve3([
   new THREE.Vector3(20,2,51),
   new THREE.Vector3(20,2,50),
   new THREE.Vector3(20,2,120),
-]);
+]
+let pathCurve = new THREE.CatmullRomCurve3(pathCurveList);
 
 
 
@@ -188,7 +189,6 @@ function typeWriter(i) {
 
 function showScrollDownIndicator() {
   setTimeout(() => {
-    console.log("SCROLLDOWNINDICATOR RUNNING");
     $("#scroll-down-indicator").fadeTo(700,1);
   }, 2500);
 }
@@ -328,18 +328,20 @@ function changeLoaderText() {
 
 $(function() {
 
-  changeLoaderText();
-  
+  // Responsive design changes for smartphones
   if(window.innerWidth <= 576) {
     particleJson.particles.number.value = 50;
+    pathCurveList.shift();
+    pathCurveList.unshift(new THREE.Vector3(20,2,220));
+    pathCurveList[1] = new THREE.Vector3(-30,2,220);
   }
+
+  changeLoaderText();  
   loadParticleJs();
-  
   makeStarSphere();
   fadeEffect();    
   resumeAnimation();
-
-  loadSaturn(typeWriter);
-  // typeWriter(0);  //Inside loadSaturn() function
+  loadSaturn();
+  // typeWriter(0) and showScrollDownIndicator() //Inside loadSaturn() function
   animate();
 });
