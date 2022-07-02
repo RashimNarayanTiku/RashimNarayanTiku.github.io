@@ -310,10 +310,14 @@ section {
     top:30vh;
     left:27vw;
     width:21vw;
-    filter: brightness(75%); 
+    filter:blur(1px); 
 }
-.resume-img:hover{
-    filter: brightness(100%); 
+
+.resume-click-icon{
+    position: absolute;
+    top:50vh;
+    left:35vw;
+    width:50px !important;
 }
 
 .big-resume-container{
@@ -551,7 +555,10 @@ section {
         height: 29vh;
     }
 
-
+    .resume-click-icon{
+        top:42vh;
+        left:33vw;
+    }
     .resume-img-big{
         left:0vw !important;
         top:10vh;
