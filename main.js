@@ -291,7 +291,7 @@ function resumeAnimation() {
       document.getElementsByTagName('body')[0].style.overflowY = "scroll";
     }, 500);
   });
-  $('.resume-img').on('click', function(){
+  $('#resume').on('click', function(){
     document.getElementsByTagName('body')[0].style.overflowY = "hidden";
     $('.big-resume-container').css('opacity',0);
     $('.big-resume-container').css('display','block');
