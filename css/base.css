@@ -46,15 +46,17 @@ body{
 }
 
 #scroll-down-indicator {
-	border: 2.5px solid #000;
+	border: 2.5px solid #000 !important;
 	border-radius: 50px;
 	height: 3em;
 	width: 2em;
-	position: absolute;
+	position: fixed;
 	top: 90%;
 	left: 47%;
     animation: animateScroll 1.5s linear infinite;
     opacity: 0;
+    z-index:1500;
+
 }
 @keyframes animateScroll {
     0% {
@@ -80,6 +82,15 @@ body{
     top: 0.5em;
     border-radius: 50%;
     animation: animateBefore 1.3s linear infinite;
+}
+
+
+/* Dynamic Scroll Indicator Color Changing  */
+#scroll-down-indicator.white{
+    border-color: rgb(233, 233, 233) !important;
+}
+#scroll-down-indicator.white:before{
+    background: rgb(233, 233, 233) !important;
 }
 
 @keyframes animateBefore {

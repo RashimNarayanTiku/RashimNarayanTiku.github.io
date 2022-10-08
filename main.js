@@ -22,11 +22,10 @@ function onWindowResize() {
 }
 
 
-
 // Adding Hollow Sphere of Stars
 let sphere;
 const v = new THREE.Vector3();
-function randomPointInSphere(radius) {
+const randomPointInSphere = (radius) => {
 
   const x = THREE.Math.randFloat( -1, 1 );
   const y = THREE.Math.randFloat( -1, 1 );
@@ -39,7 +38,7 @@ function randomPointInSphere(radius) {
 
   return v;
 }
-function makeStarSphere() {
+const makeStarSphere = () => {
   let geometry = new THREE.BufferGeometry();
   let positions = [];
   let count = 4000;
@@ -54,7 +53,6 @@ function makeStarSphere() {
   sphere = new THREE.Points(geometry, material);
   scene.add( sphere );
 }
-
 
 
 // Camera Animation Path
@@ -110,7 +108,7 @@ window.addEventListener('scroll', (e) => {
 
 
 // Recurring function for 3-D animation
-function animate() {
+const animate = () => {
   if(saturn) saturn.rotation.y += 0.002;
   if(sphere) sphere.rotation.y += 0.0005;
 
@@ -121,9 +119,8 @@ function animate() {
 }
 
 
-
 // Fade Effect for portfolio scrolling
-function fadeEffect() {
+const fadeEffect = () => {
   $(window).scroll(function() {
     let windowTop = $(this).scrollTop();
     let windowBottom = $(this).scrollTop() + $(this).innerHeight();
@@ -158,9 +155,8 @@ function fadeEffect() {
 }
 
 
-
 // First Page type-writer animation effect
-function typeWriter(i) {
+const typeWriter = (i) => {
 
   if(i === undefined) {
     i = 0;
@@ -187,10 +183,53 @@ function typeWriter(i) {
   
 }
 
-function showScrollDownIndicator() {
-  setTimeout(() => {
-    $("#scroll-down-indicator").fadeTo(700,1);
-  }, 2500);
+
+// Detect whether element is on viewport
+const detect_visibility = (elem) => {
+  
+  const element = document.querySelector(elem);
+
+  const top_of_element = element.offsetTop;
+  const bottom_of_element = element.offsetTop + element.offsetHeight + element.style.marginTop;
+  const bottom_of_screen = window.scrollY + window.innerHeight;
+  const top_of_screen = window.scrollY;
+
+  return (bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element);
+}
+
+
+const hideScrollIndicator = () => $("#scroll-down-indicator").css("opacity", "0");
+
+const showScrollIndicator = () => {
+  if(!detect_visibility("footer")) {
+      $("#scroll-down-indicator").fadeTo(200,1);
+    };
+  }
+
+// Dynamic scroll indicator color change
+window.addEventListener('scroll', () => {
+  if(!detect_visibility(".page-1")) {
+    $("#scroll-down-indicator").css("border-color", "white");
+    $("#scroll-down-indicator").addClass("white");
+  } else {
+    $("#scroll-down-indicator").removeClass("white");
+  }
+});
+  
+
+const showScrollIndicatorOnScrollStop = (element, showScrollIndicator, timeout) => {
+  var handle = null;
+  var onScroll = function() {
+    if (handle) {
+      hideScrollIndicator();
+      clearTimeout(handle);
+    }
+    handle = setTimeout(showScrollIndicator, timeout || 2000); // default 2 sec
+  };
+  element.addEventListener('scroll', onScroll);
+  return function() {
+    element.removeEventListener('scroll', onScroll);
+  };
 }
 
 
@@ -250,15 +289,14 @@ let particleJson = {
   retina_detect: true
 };
 
-function loadParticleJs() {
+const loadParticleJs = () => {
   particlesJS("particles-js", particleJson);
 }
 
 
-
 // Loading 3-D Model
 let saturn;
-function loadSaturn() {
+const loadSaturn = (callback) => {
   let loader = new THREE.GLTFLoader();
 
   const dracoLoader = new THREE.DRACOLoader();
@@ -272,18 +310,13 @@ function loadSaturn() {
     saturn = object;
     scene.add( object );
 
-    // After loading is completed
-    document.getElementById('loader').style.display = "none";
-    document.getElementsByTagName('body')[0].style.overflowY = "scroll";
-    typeWriter(0);
-    showScrollDownIndicator();
+    callback();
   });
 }
 
 
-
 // Resume
-function resumeAnimation() {
+const resumeAnimation = () => {
   $('.big-resume-container').on('click', function() {
     $(this).fadeTo(500,0);
     setTimeout(() => {
@@ -299,8 +332,9 @@ function resumeAnimation() {
   });
 }
 
+
 //Loader text changes  
-function changeLoaderText() {
+const changeLoaderText = () => {
 
   setTimeout(() => {
     document.getElementById('loading-text').innerHTML = 'You won\'t be dissapointed...';
@@ -326,7 +360,7 @@ function changeLoaderText() {
 
 }
 
-$(function() {
+$(() => {
 
   // Responsive design changes for smartphones
   if(window.innerWidth <= 576) {
@@ -341,7 +375,18 @@ $(function() {
   makeStarSphere();
   fadeEffect();    
   resumeAnimation();
-  loadSaturn();
-  // typeWriter(0) and showScrollDownIndicator() //Inside loadSaturn() function
   animate();
+
+  showScrollIndicatorOnScrollStop(window, () => {
+    showScrollIndicator();
+  });
+
+  loadSaturn(() => {
+    document.getElementById('loader').style.display = "none";
+    document.getElementsByTagName('body')[0].style.overflowY = "scroll";
+    typeWriter(0);
+    setTimeout(() => {
+      showScrollIndicator();
+    }, 2500);
+  });
 });
