@@ -203,7 +203,7 @@ const showScrollIndicator = () => {
 
 // Dynamic scroll indicator color change
 window.addEventListener('scroll', () => {
-  if(!isAlmostInViewport(".page-1", 20)) {
+  if(!isAlmostInViewport(".page-1", 50)) {
     $("#scroll-down-indicator").addClass("white");
   } else {
     $("#scroll-down-indicator").removeClass("white");
