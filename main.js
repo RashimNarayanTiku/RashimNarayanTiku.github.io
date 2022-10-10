@@ -89,20 +89,19 @@ let oldValue, newValue, progress, lerpAlpha, cameraTarget;
 oldValue = newValue = progress = 0;
 lerpAlpha = 0.1;
 cameraTarget = new THREE.Vector3().copy(pathCurve.getPointAt(0));
-const lerping = () => {
+window.addEventListener('scroll', () => {
   newValue = window.pageYOffset;
   progress += (newValue - oldValue) * 0.0002;
-
+  
   if(!(progress >= 0 && progress < 1)) {
     if(newValue > oldValue) progress = 0;
     else progress = 0.99; 
   }
-
+  
   cameraTarget.copy(pathCurve.getPointAt(progress));
   renderer.render( scene, camera );
   oldValue = newValue;
-};
-
+});
 
 // Recurring function for 3-D animation
 const animate = () => {
@@ -181,38 +180,35 @@ const typeWriter = (i) => {
 }
 
 
-// Detect whether element is (ALMOST) inside the viewport
-function isAlmostInViewport(elem) {
+// Detect whether element is (ALMOST) inside thegt viewport
+function isAlmostInViewport(elem, delta) {
   const element = document.querySelector(elem);
   var rect = element.getBoundingClientRect();
   var html = document.documentElement;
-  return (
-    rect.top >= -25 &&
+  return (rect.top >= -delta &&
     rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || html.clientHeight) &&
-    rect.right <= (window.innerWidth || html.clientWidth)
-  );
+    rect.bottom <= (window.innerHeight || html.clientHeight)+delta &&
+    rect.right <= (window.innerWidth || html.clientWidth))
 }
 
 
 const hideScrollIndicator = () => $("#scroll-down-indicator").css("opacity", "0");
 
 const showScrollIndicator = () => {
-  if(!isAlmostInViewport("footer")) {
+  if(!isAlmostInViewport("footer", 0)) {
       $("#scroll-down-indicator").fadeTo(200,1);
     };
 }
 
 
 // Dynamic scroll indicator color change
-const scrollIndicatorColorChange = () => {
-  if(!isAlmostInViewport(".page-1")) {
+window.addEventListener('scroll', () => {
+  if(!isAlmostInViewport(".page-1", 20)) {
     $("#scroll-down-indicator").addClass("white");
   } else {
     $("#scroll-down-indicator").removeClass("white");
   }
-}
-  
+});
 
 const showScrollIndicatorOnScrollStop = (element, showScrollIndicator, timeout) => {
   var handle = null;
@@ -357,11 +353,6 @@ const changeLoaderText = () => {
 
 }
 
-
-window.addEventListener('scroll', () => {
-  lerping();
-  scrollIndicatorColorChange();
-});
 
 $(() => {
 
