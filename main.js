@@ -181,8 +181,8 @@ const typeWriter = (i) => {
 }
 
 
-// Detect whether element is on viewport
-function isInViewport(elem) {
+// Detect whether element is (ALMOST) inside the viewport
+function isAlmostInViewport(elem) {
   const element = document.querySelector(elem);
   var rect = element.getBoundingClientRect();
   var html = document.documentElement;
@@ -198,7 +198,7 @@ function isInViewport(elem) {
 const hideScrollIndicator = () => $("#scroll-down-indicator").css("opacity", "0");
 
 const showScrollIndicator = () => {
-  if(!isInViewport("footer")) {
+  if(!isAlmostInViewport("footer")) {
       $("#scroll-down-indicator").fadeTo(200,1);
     };
 }
@@ -206,7 +206,7 @@ const showScrollIndicator = () => {
 
 // Dynamic scroll indicator color change
 const scrollIndicatorColorChange = () => {
-  if(!isInViewport(".page-1")) {
+  if(!isAlmostInViewport(".page-1")) {
     $("#scroll-down-indicator").addClass("white");
   } else {
     $("#scroll-down-indicator").removeClass("white");
