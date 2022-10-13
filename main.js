@@ -185,9 +185,10 @@ function isAlmostInViewport(elem, delta) {
   const element = document.querySelector(elem);
   var rect = element.getBoundingClientRect();
   var html = document.documentElement;
-  return (rect.top >= -delta &&
+  return (
+    rect.top >= -delta &&
     rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || html.clientHeight)+delta &&
+    rect.bottom <= (window.innerHeight || html.clientHeight) + (delta*2) &&
     rect.right <= (window.innerWidth || html.clientWidth))
 }
 
