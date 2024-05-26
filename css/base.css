@@ -557,6 +557,9 @@ section {
         margin-bottom: 10%;
     }
 
+    .typescript-skill {
+        width: 16vw !important;
+    }
 
     .icon-cards {
         margin-left: 18vw !important;
