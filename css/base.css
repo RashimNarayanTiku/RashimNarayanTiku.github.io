@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
 
+.cursor-star {
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: fadeOut 0.8s linear forwards;
+    z-index:10000;
+}
+@keyframes fadeOut {
+    0% { opacity: 1; transform: scale(0) translate(0, 0); }
+    100% { opacity: 0; transform: scale(1) translate(var(--tx), var(--ty)); }
+}
+
 @font-face{
     font-family: monospaceFont;
     src:url(Cousine-Regular.ttf);
@@ -18,6 +33,7 @@ html{
     scroll-behavior: smooth;
     -ms-overflow-style: none;
     scrollbar-width: none; 
+    cursor: none;
 }
 html::-webkit-scrollbar { 
     display: none;
@@ -27,7 +43,6 @@ body{
     background-color: #000;
     overflow: hidden;
 }
-
 
 #bg{
     position: fixed;
@@ -384,8 +399,6 @@ section {
     color:grey;
     background-color: transparent;
     margin-bottom: 1% !important;
-
-
 }
 
 

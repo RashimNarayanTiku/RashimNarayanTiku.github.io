@@ -9,7 +9,54 @@ const pointLight = new THREE.PointLight(0xffffff);
 pointLight.position.set(20,23,12);
 scene.add(pointLight);
 
-
+// Make Cursor with stars
+const makeCursor = () => {
+  let mouseX = 0;
+  let mouseY = 0;
+  
+  document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      createCursorStar();
+  });
+  
+  // Reusing star elements for performance
+  let cursorStars = [];
+  for(let i=0; i<200; i++){
+    cursorStars.push(document.createElement('div'));
+  }
+  
+  function createCursorStar() {
+      if(!cursorStars.length) return;
+      const star = cursorStars.pop();
+      star.className = 'cursor-star';
+      star.style.left = mouseX + Math.random() * 10 + 'px';
+      star.style.top = mouseY + Math.random() * 10 + 'px';
+  
+      if(isAlmostInViewport(".page-1", 50)) {
+        star.style.backgroundColor = 'black';
+      } else {
+        star.style.backgroundColor = 'white';
+      }
+      
+      const angle = Math.random() * Math.PI * 2;
+      const distance = Math.random() * 20 + 10; 
+      const tx = Math.cos(angle) * distance;
+      const ty = Math.sin(angle) * distance;
+      
+      star.style.setProperty('--tx', `${tx}px`);
+      star.style.setProperty('--ty', `${ty}px`);
+  
+      document.body.appendChild(star);
+  
+      setTimeout(() => {
+          cursorStars.push(star);
+      }, 2000);
+  }
+  
+  // Create stars continuously
+  setInterval(createCursorStar, 25); // Creates a star every 25 milliseconds
+}
 
 // Dynamic Window Size Updation
 window.addEventListener('resize', onWindowResize, false)
@@ -20,7 +67,6 @@ function onWindowResize() {
     renderer.render(scene, camera);
     
 }
-
 
 // Adding Hollow Sphere of Stars
 let sphere;
@@ -179,8 +225,7 @@ const typeWriter = (i) => {
   
 }
 
-
-// Detect whether element is (ALMOST) inside thegt viewport
+// Detect whether element is (ALMOST) inside the viewport
 function isAlmostInViewport(elem, delta) {
   const element = document.querySelector(elem);
   var rect = element.getBoundingClientRect();
@@ -192,7 +237,6 @@ function isAlmostInViewport(elem, delta) {
     rect.right <= (window.innerWidth || html.clientWidth))
 }
 
-
 const hideScrollIndicator = () => $("#scroll-down-indicator").css("opacity", "0");
 
 const showScrollIndicator = () => {
@@ -202,13 +246,17 @@ const showScrollIndicator = () => {
 }
 
 
-// Dynamic scroll indicator color change
-window.addEventListener('scroll', () => {
+const dynamicColorChange = () => {
   if(!isAlmostInViewport(".page-1", 50)) {
     $("#scroll-down-indicator").addClass("white");
   } else {
     $("#scroll-down-indicator").removeClass("white");
   }
+}
+
+// Dynamic scroll indicator color change
+window.addEventListener('scroll', () => {
+  dynamicColorChange();
 });
 
 const showScrollIndicatorOnScrollStop = (element, showScrollIndicator, timeout) => {
@@ -287,7 +335,6 @@ const loadParticleJs = () => {
   particlesJS("particles-js", particleJson);
 }
 
-
 // Loading 3-D Model
 let saturn;
 const loadSaturn = (callback) => {
@@ -308,7 +355,6 @@ const loadSaturn = (callback) => {
   });
 }
 
-
 // Resume
 const resumeAnimation = () => {
   $('.big-resume-container').on('click', function() {
@@ -325,7 +371,6 @@ const resumeAnimation = () => {
     $('.big-resume-container').fadeTo(500,1);
   });
 }
-
 
 //Loader text changes  
 const changeLoaderText = () => {
@@ -354,7 +399,6 @@ const changeLoaderText = () => {
 
 }
 
-
 $(() => {
 
   // Responsive design changes for smartphones
@@ -365,7 +409,9 @@ $(() => {
     pathCurveList[1] = new THREE.Vector3(-30,2,220);
   }
 
-  changeLoaderText();  
+  makeCursor();
+  dynamicColorChange();
+  changeLoaderText();
   loadParticleJs();
   makeStarSphere();
   fadeEffect();    
