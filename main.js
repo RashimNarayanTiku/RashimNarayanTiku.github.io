@@ -409,7 +409,9 @@ $(() => {
     pathCurveList[1] = new THREE.Vector3(-30,2,220);
   }
 
-  makeCursor();
+  if(window.innerWidth > 576)
+    makeCursor();
+
   dynamicColorChange();
   changeLoaderText();
   loadParticleJs();
