@@ -33,7 +33,7 @@ const makeCursor = () => {
       star.style.left = mouseX + Math.random() * 10 + 'px';
       star.style.top = mouseY + Math.random() * 10 + 'px';
   
-      if(isAlmostInViewport(".page-1", 50)) {
+      if(isAlmostInViewport(".page-1", 250)) {
         star.style.backgroundColor = 'black';
       } else {
         star.style.backgroundColor = 'white';
@@ -247,7 +247,7 @@ const showScrollIndicator = () => {
 
 
 const dynamicColorChange = () => {
-  if(!isAlmostInViewport(".page-1", 50)) {
+  if(!isAlmostInViewport(".page-1", 100)) {
     $("#scroll-down-indicator").addClass("white");
   } else {
     $("#scroll-down-indicator").removeClass("white");
