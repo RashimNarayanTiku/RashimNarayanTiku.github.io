@@ -7,12 +7,12 @@
     height: 7px;
     border-radius: 50%;
     pointer-events: none;
-    animation: fadeOut 0.8s linear forwards;
+    animation: fadeOut 0.9s linear forwards;
     z-index:10000;
 }
 @keyframes fadeOut {
     0% { opacity: 1; transform: scale(0) translate(0, 0); }
-    100% { opacity: 0; transform: scale(1) translate(var(--tx), var(--ty)); }
+    100% { opacity: 0; transform: scale(1.3) translate(var(--tx), var(--ty)); }
 }
 
 @font-face{
@@ -336,7 +336,7 @@ section {
     top:30vh;
     left:27vw;
     width:21vw;
-    filter:blur(0.7px); 
+    filter:blur(0.6px); 
 }
 
 .resume-click-icon{

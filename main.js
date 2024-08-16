@@ -1,3 +1,5 @@
+const isScreenSmall = window.innerWidth <= 576;
+
 // Renderer, Scene, Camera, Light
 const renderer = new THREE.WebGL1Renderer({ canvas: document.querySelector('#bg') });
 renderer.setPixelRatio(window.devicePixelRatio);
@@ -14,17 +16,19 @@ const makeCursor = () => {
   let mouseX = 0;
   let mouseY = 0;
   
-  document.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      createCursorStar();
-  });
   
   // Reusing star elements for performance
   let cursorStars = [];
-  for(let i=0; i<200; i++){
+  let starCount = 300;
+  for(let i=0; i<starCount; i++){
     cursorStars.push(document.createElement('div'));
   }
+
+  document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      createCursorStar(true);
+  });
   
   function createCursorStar() {
       if(!cursorStars.length) return;
@@ -55,7 +59,7 @@ const makeCursor = () => {
   }
   
   // Create stars continuously
-  setInterval(createCursorStar, 25); // Creates a star every 25 milliseconds
+  setInterval(createCursorStar, 18); // Creates a star every 25 milliseconds
 }
 
 // Dynamic Window Size Updation
@@ -65,7 +69,6 @@ function onWindowResize() {
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight)
     renderer.render(scene, camera);
-    
 }
 
 // Adding Hollow Sphere of Stars
@@ -87,8 +90,12 @@ const randomPointInSphere = (radius) => {
 const makeStarSphere = () => {
   let geometry = new THREE.BufferGeometry();
   let positions = [];
-  let count = 4000;
+  let count = 4500;
   let radius = 100;
+  if(isScreenSmall) {
+    count = 2000;
+    radius = 70;
+  }
   for (var i = 0; i<count; i++) {
       var vertex = randomPointInSphere(radius);
       positions.push( vertex.x, vertex.y, vertex.z );
@@ -339,13 +346,17 @@ const loadParticleJs = () => {
 let saturn;
 const loadSaturn = (callback) => {
   let loader = new THREE.GLTFLoader();
-
   const dracoLoader = new THREE.DRACOLoader();
   dracoLoader.setDecoderPath( 'https://unpkg.com/three@0.128.0/examples/js/libs/draco/' );
   loader.setDRACOLoader( dracoLoader );
 
   loader.crossOrigin = true;
-  loader.load("./saturn/scene-compressed.glb", function(data) {
+
+  let modelName = "saturn";
+  if(isScreenSmall) {
+    modelName = "saturn-compressed";
+  }
+  loader.load(`./saturn/${modelName}.glb`, function(data) {
     let object = data.scene;
     object.position.set(0,0,0);
     saturn = object;
@@ -402,28 +413,17 @@ const changeLoaderText = () => {
 $(() => {
 
   // Responsive design changes for smartphones
-  if(window.innerWidth <= 576) {
+  if(isScreenSmall) {
     particleJson.particles.number.value = 50;
     pathCurveList.shift();
     pathCurveList.unshift(new THREE.Vector3(20,2,220));
     pathCurveList[1] = new THREE.Vector3(-30,2,220);
   }
 
-  if(window.innerWidth > 576)
+  if(!isScreenSmall) {
     makeCursor();
-
-  dynamicColorChange();
-  changeLoaderText();
-  loadParticleJs();
-  makeStarSphere();
-  fadeEffect();    
-  resumeAnimation();
-  animate();
-
-  showScrollIndicatorOnScrollStop(window, () => {
-    showScrollIndicator();
-  });
-
+  }
+  
   loadSaturn(() => {
     document.getElementById('loader').style.display = "none";
     document.getElementsByTagName('body')[0].style.overflowY = "scroll";
@@ -431,5 +431,17 @@ $(() => {
     setTimeout(() => {
       showScrollIndicator();
     }, 2500);
+  });
+  
+  makeStarSphere();
+  dynamicColorChange();
+  changeLoaderText();
+  loadParticleJs();
+  fadeEffect();    
+  resumeAnimation();
+  animate();
+
+  showScrollIndicatorOnScrollStop(window, () => {
+    showScrollIndicator();
   });
 });
