@@ -285,7 +285,7 @@ const showScrollIndicatorOnScrollStop = (element, showScrollIndicator, timeout) 
 // First Page background effect (Particles.js)
 let particleJson = {
   particles: {
-    number: { value: 80, density: { enable: true, value_area: 800 } },
+    number: { value: 50, density: { enable: true, value_area: 1000 } },
     color: { value: "#000000" },
     shape: {
       type: "circle",
