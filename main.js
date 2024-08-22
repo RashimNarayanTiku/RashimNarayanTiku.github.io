@@ -1,4 +1,10 @@
 const isScreenSmall = window.innerWidth <= 576;
+const canTestSpeed = navigator.connection && navigator.connection.downlink;
+
+let highBandwidth = false; 
+if(canTestSpeed && navigator.connection.downlink > 5) {
+  highBandwidth = true;
+}
 
 // Renderer, Scene, Camera, Light
 const renderer = new THREE.WebGL1Renderer({ canvas: document.querySelector('#bg') });
@@ -240,8 +246,7 @@ function isAlmostInViewport(elem, delta) {
   return (
     rect.top >= -delta &&
     rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || html.clientHeight) + (delta*2) &&
-    rect.right <= (window.innerWidth || html.clientWidth))
+    rect.bottom <= (window.innerHeight || html.clientHeight) + (delta*2))
 }
 
 const hideScrollIndicator = () => $("#scroll-down-indicator").css("opacity", "0");
@@ -353,7 +358,7 @@ const loadSaturn = (callback) => {
   loader.crossOrigin = true;
 
   let modelName = "saturn";
-  if(isScreenSmall) {
+  if(isScreenSmall || !highBandwidth) {
     modelName = "saturn-compressed";
   }
   loader.load(`./saturn/${modelName}.glb`, function(data) {
