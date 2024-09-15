@@ -670,11 +670,11 @@ section {
     }
 
     .resume-download {
-        font-size: xx-large;
+        font-size: x-large;
         color: white;
         position: absolute;
         top: 10px;
-        left: 50vw;
+        left: 47vw;
     }    
 
     .contacts .fa-linkedin {
