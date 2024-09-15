@@ -664,7 +664,7 @@ section {
 
     .resume-img-big {
         left: 0vw !important;
-        top: 8vh;
+        top: 10vh;
         width: 100vw !important;
         height: 70vh !important;
     }
@@ -673,7 +673,7 @@ section {
         font-size: x-large;
         color: white;
         position: absolute;
-        top: 90vh;
+        top: 20px;
         left: 47vw;
     }    
 
