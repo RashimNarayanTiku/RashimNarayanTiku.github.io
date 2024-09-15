@@ -96,8 +96,8 @@ const randomPointInSphere = (radius) => {
 const makeStarSphere = () => {
   let geometry = new THREE.BufferGeometry();
   let positions = [];
-  let count = 4500;
-  let radius = 100;
+  let count = 2000;
+  let radius = 60;
   if(isScreenSmall) {
     count = 2000;
     radius = 70;
@@ -193,7 +193,7 @@ const fadeEffect = () => {
           }, 200);
       }
       //object comes into view
-      else if (objectTop < windowBottom) {    
+      else if (objectTop < windowBottom) {
         if ($(this).css("opacity")==0) $(this).fadeTo(500,1);
         this.querySelector('section').classList.add('fixed-position');
       }

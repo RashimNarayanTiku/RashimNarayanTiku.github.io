@@ -8,16 +8,24 @@
     border-radius: 50%;
     pointer-events: none;
     animation: fadeOut 0.9s linear forwards;
-    z-index:10000;
-}
-@keyframes fadeOut {
-    0% { opacity: 1; transform: scale(0) translate(0, 0); }
-    100% { opacity: 0; transform: scale(1.3) translate(var(--tx), var(--ty)); }
+    z-index: 10000;
 }
 
-@font-face{
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(0) translate(0, 0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.3) translate(var(--tx), var(--ty));
+    }
+}
+
+@font-face {
     font-family: monospaceFont;
-    src:url(Cousine-Regular.ttf);
+    src: url(Cousine-Regular.ttf);
 }
 
 @font-face {
@@ -29,22 +37,23 @@
     outline: none;
 }
 
-html{
+html {
     scroll-behavior: smooth;
     -ms-overflow-style: none;
-    scrollbar-width: none; 
+    scrollbar-width: none;
     cursor: none;
 }
-html::-webkit-scrollbar { 
-    display: none;
-} 
 
-body{
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body {
     background-color: #000;
     overflow: hidden;
 }
 
-#bg{
+#bg {
     position: fixed;
     top: 0;
     left: 0;
@@ -52,7 +61,7 @@ body{
     height: 100vh !important;
 }
 
-#particle-js{
+#particle-js {
     position: fixed;
     top: 0;
     left: 0;
@@ -61,25 +70,28 @@ body{
 }
 
 #scroll-down-indicator {
-	border: 2.5px solid #000 !important;
-	border-radius: 50px;
-	height: 3em;
-	width: 2em;
-	position: fixed;
-	top: 90%;
-	left: 47%;
+    border: 2.5px solid #000 !important;
+    border-radius: 50px;
+    height: 3em;
+    width: 2em;
+    position: fixed;
+    top: 90%;
+    left: 47%;
     animation: animateScroll 1.5s linear infinite;
     opacity: 0;
-    z-index:1500;
+    z-index: 1500;
 
 }
+
 @keyframes animateScroll {
     0% {
         top: 90%;
     }
+
     50% {
         top: 91%;
     }
+
     100% {
         top: 90%;
     }
@@ -88,7 +100,7 @@ body{
 #scroll-down-indicator:before {
     content: "";
     position: absolute;
-    width:0.42em;
+    width: 0.42em;
     height: 0.42em;
     background: #000;
     margin: auto;
@@ -101,10 +113,11 @@ body{
 
 
 /* Dynamic Scroll Indicator Color Changing  */
-#scroll-down-indicator.white{
+#scroll-down-indicator.white {
     border-color: rgba(223, 223, 223, 0.632) !important;
 }
-#scroll-down-indicator.white:before{
+
+#scroll-down-indicator.white:before {
     background: rgba(223, 223, 223, 0.632) !important;
 }
 
@@ -113,13 +126,14 @@ body{
         opacity: 1;
         top: 0.5em;
     }
+
     100% {
         top: 2em;
         transform: scale(0.9);
     }
 }
 
-main{
+main {
     position: absolute;
     margin: 0px auto;
 }
@@ -130,63 +144,88 @@ main{
     width: 100%;
     height: 100%;
     z-index: -1;
-} 
+}
 
 
 /* Projects Carousel */
 .icon-cards {
-	position: relative;
-	width: 50vw;
-	height: 70vh;
-	margin: 0 auto;
-	perspective: 1000px;
-	transform-origin: center;
+    position: relative;
+    width: 50vw;
+    height: 70vh;
+    margin: 0 auto;
+    perspective: 1000px;
+    transform-origin: center;
 }
+
 .icon-cards__content {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	transform-origin: center;
-	transform-style: preserve-3d;
-	transform: translateZ(-30vw) rotateY(0);
-	animation: carousel 8s infinite cubic-bezier(0.77, 0, 0.275, 1) forwards;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: translateZ(-30vw) rotateY(0);
+    animation: carousel 8s infinite cubic-bezier(0.77, 0, 0.275, 1) forwards;
 }
+
 .icon-cards__content.step-animation {
-	animation: carousel 8s infinite steps(1) forwards;
+    animation: carousel 8s infinite steps(1) forwards;
 }
+
 .icon-cards__item {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	border-radius: 6px;
-	transform-origin: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 6px;
+    transform-origin: center;
 }
+
 .icon-cards__content img {
     border-radius: 10px !important;
-    width:55vw !important;
+    width: 55vw !important;
     filter: brightness(90%);
     transition: transform .3s;
 }
-.icon-cards__content img:hover{
+
+.icon-cards__content img:hover {
     transform: scale(1.15);
     filter: brightness(100%);
 }
+
 .icon-cards__item:nth-child(1) {
-	transform: rotateY(0) translateZ(35vw);
+    transform: rotateY(0) translateZ(35vw);
 }
+
 .icon-cards__item:nth-child(2) {
-	transform: rotateY(120deg) translateZ(35vw);
+    transform: rotateY(120deg) translateZ(35vw);
 }
+
 .icon-cards__item:nth-child(3) {
-	transform: rotateY(240deg) translateZ(35vw);
+    transform: rotateY(240deg) translateZ(35vw);
 }
+
 @keyframes carousel {
-	0%, 17.5% {transform: translateZ(-35vw) rotateY(0);}
-	27.5%, 45% {transform: translateZ(-35vw) rotateY(-120deg);}
-	55%, 72.5% {transform: translateZ(-35vw) rotateY(-240deg);}
-	82.5%, 100% {transform: translateZ(-35vw) rotateY(-360deg);}
+
+    0%,
+    17.5% {
+        transform: translateZ(-35vw) rotateY(0);
+    }
+
+    27.5%,
+    45% {
+        transform: translateZ(-35vw) rotateY(-120deg);
+    }
+
+    55%,
+    72.5% {
+        transform: translateZ(-35vw) rotateY(-240deg);
+    }
+
+    82.5%,
+    100% {
+        transform: translateZ(-35vw) rotateY(-360deg);
+    }
 }
 
 
@@ -199,21 +238,23 @@ main{
     width: 100vw;
     height: 100vh;
 }
+
 #loader-content {
     position: absolute;
     top: 35%;
-    width:100vw;
+    width: 100vw;
 }
-#loader-content > *{
-    font-size: 130%; 
-    margin-left:46vw;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+
+#loader-content>* {
+    font-size: 130%;
+    margin-left: 46vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .page {
     height: 100vh !important;
     margin-bottom: 150vh;
-    z-index: inherit;   
+    z-index: inherit;
 }
 
 
@@ -238,7 +279,7 @@ main{
 
 #type-writer {
     padding-right: 0;
-    font-size:196%;
+    font-size: 196%;
     color: black;
     font-weight: bolder;
     border-right: 3px solid black;
@@ -249,19 +290,21 @@ main{
     list-style-type: none;
     margin-left: -25px;
 }
-.social{
+
+.social {
     font-size: 120% !important;
     margin-left: 0.6%;
-    float:left;    
+    float: left;
 }
-.social  i{
-color:#000;
+
+.social i {
+    color: #000;
 }
 
 #page-1-line {
     margin-top: 5%;
     margin-left: -15px;
-    width:90%;
+    width: 90%;
     border-bottom: 5px solid black;
 }
 
@@ -285,30 +328,30 @@ section {
 }
 
 
-.section-title h2{
+.section-title h2 {
     color: #000;
     font-family: sans-serif;
     font-size: 750%;
     font-weight: 1000;
     text-transform: uppercase;
-    text-shadow:-1px -1px 0 #808080, 1px -1px 0 #808080, -1px 1px 0 #808080, 1px 1px 0 #808080;
+    text-shadow: -1px -1px 0 #808080, 1px -1px 0 #808080, -1px 1px 0 #808080, 1px 1px 0 #808080;
     letter-spacing: -16.5px;
     margin-top: 3% !important;
 }
 
-.section-heading{
+.section-heading {
     font-family: "monospaceFont", sans-serif;
     font-size: 1.4em;
-    color:rgb(196, 196, 196);
+    color: rgb(196, 196, 196);
     margin-top: 5%;
     margin-bottom: 3%;
 }
 
-.section-content{
+.section-content {
     font-size: 1.2em;
     letter-spacing: 0.1em;
-    font-family:  sans-serif;
-    color:rgb(175, 174, 174);
+    font-family: sans-serif;
+    color: rgb(175, 174, 174);
 }
 
 #name {
@@ -323,7 +366,7 @@ section {
 }
 
 
-.skills img{
+.skills img {
     padding-right: 2%;
     margin: 0 auto;
 }
@@ -331,35 +374,51 @@ section {
 
 
 /* Resume section */
-.resume-img{
+.resume-img {
     position: absolute;
-    top:30vh;
-    left:27vw;
-    width:21vw;
-    filter:blur(0.6px); 
+    top: 30vh;
+    left: 27vw;
+    width: 21vw;
+    filter: blur(0.6px);
 }
 
-.resume-click-icon{
-    position: absolute;
-    top:50vh;
-    left:35vw;
-    width:50px !important;
+.resume-img:hover {
+    cursor: pointer
 }
 
-.big-resume-container{
+.resume-click-icon {
+    position: absolute;
+    top: 50vh;
+    left: 35vw;
+    width: 50px !important;
+}
+
+.big-resume-container {
     display: none;
-    position:fixed;
-    top:0; 
-    left:0;
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: 2000;
     background-color: rgba(0, 0, 0, 0.512);
-    height:100vh;
+    height: 100vh;
     width: 100vw;
 }
-.resume-img-big{
+
+.resume-img-big {
     position: absolute;
-    left:30vw;
+    left: 30vw;
     height: 100vh;
+}
+
+.resume-download {
+    color: white;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}   
+
+.resume-img-big:hover {
+    cursor: pointer
 }
 
 
@@ -367,36 +426,39 @@ section {
 /* Contact Section */
 .page-5 p {
     font-size: 1.9vw;
-    color:#808080
+    color: #808080
 }
+
 .contacts a {
     color: #808080 !important;
 }
+
 .contacts i {
     font-size: 6.5vw !important;
 }
-.contacts{
-    display:flex;
+
+.contacts {
+    display: flex;
     justify-content: space-around;
     margin-top: 15vh;
 }
 
-.contacts div :hover{
+.contacts div :hover {
     color: rgb(245, 245, 245) !important;
     text-decoration: none;
 }
 
 #contact-box {
-    font-family: "monospaceFont",sans-serif;
+    font-family: "monospaceFont", sans-serif;
 }
 
-.copyright{
-    display:flex;
+.copyright {
+    display: flex;
     justify-content: center;
     font-family: "monospaceFont", sans-serif;
     font-size: 85%;
-    width:100vw;
-    color:grey;
+    width: 100vw;
+    color: grey;
     background-color: transparent;
     margin-bottom: 1% !important;
 }
@@ -407,63 +469,69 @@ section {
 @media (max-width: 768px) {
 
     section {
-        width:80vw !important;
+        width: 80vw !important;
     }
-    .name-heading{
+
+    .name-heading {
         font-size: 28vw !important;
     }
+
     #type-writer {
         font-size: 5vw !important;
     }
-    .social{
+
+    .social {
         font-size: 4vw !important;
         margin-left: 2%;
     }
+
     #page-1-line {
         margin-top: 10vw !important;
         margin-left: -20px;
         width: 90%;
     }
 
-    .section-content{
-        margin-top:10vw !important;
+    .section-content {
+        margin-top: 10vw !important;
     }
 
-    .skills img{
+    .skills img {
         margin-left: 10%;
         margin-bottom: 10%;
     }
 
     .icon-cards__content img {
-        width:80vw !important;
-    }
-    .icon-cards{
-        margin-left:13vw;
+        width: 80vw !important;
     }
 
-    .section-title h2{
+    .icon-cards {
+        margin-left: 13vw;
+    }
+
+    .section-title h2 {
         font-size: 18vw;
         margin-top: 10vw !important;
         margin-left: -6vw;
     }
 
     /* Resume section */
-    .resume-img{
-        top:35vh;
-        left:20vw;
-        width:40vw;
+    .resume-img {
+        top: 35vh;
+        left: 20vw;
+        width: 40vw;
     }
 
-    .big-resume-container{
-        height:100vh;
+    .big-resume-container {
+        height: 100vh;
         width: 100vw;
     }
-    .resume-img-big{
-        left:0vw !important;
-        width: 100vw  !important;
+
+    .resume-img-big {
+        left: 0vw !important;
+        width: 100vw !important;
     }
 
-    .page-5 p{
+    .page-5 p {
         font-size: 3.8vw;
         color: #808080;
         margin-top: 7vw;
@@ -472,7 +540,8 @@ section {
     .contacts {
         margin-top: 18vw !important;
     }
-    .contacts i{
+
+    .contacts i {
         font-size: 15vw !important;
     }
 
@@ -485,23 +554,24 @@ section {
         width: 95vw !important;
     }
 
-    .row{
+    .row {
         margin-right: 0 !important;
     }
 
     #loader-content {
         top: 40vh;
-        width:100vw;
+        width: 100vw;
     }
-    #loader-content > *{
-        font-size: 130%; 
-        margin-left:37vw;
+
+    #loader-content>* {
+        font-size: 130%;
+        margin-left: 37vw;
         white-space: pre-line;
     }
 
-    #loader-content img{
-        width:30% !important;
-        margin-left:2.5vw !important;
+    #loader-content img {
+        width: 30% !important;
+        margin-left: 2.5vw !important;
     }
 
     #scroll-down-indicator {
@@ -509,40 +579,43 @@ section {
         top: 85%;
         animation: animateScroll2 1.5s linear infinite;
     }
+
     @keyframes animateScroll2 {
         0% {
             top: 85%;
         }
+
         50% {
             top: 86%;
         }
+
         100% {
             top: 85%;
         }
     }
 
-    section{
-        width:85vw !important
+    section {
+        width: 85vw !important
     }
 
-    .section-title h2{
+    .section-title h2 {
         font-size: 23vw !important;
         letter-spacing: -10px;
         margin-top: 15vw !important;
     }
 
-    .name-heading{
+    .name-heading {
         font-size: 30vw !important;
         margin-top: 10vw;
         margin-right: 0 !important;
         padding-right: 0 !important;
     }
 
-    #type-writer{
+    #type-writer {
         font-size: 8.3vw !important;
     }
 
-    .social{
+    .social {
         font-size: 7vw !important;
         margin-left: 2%;
     }
@@ -553,20 +626,21 @@ section {
         width: 95%;
     }
 
-    .section-content{
-        margin-top:0 !important;
-    }
-    .section-heading{
+    .section-content {
         margin-top: 0 !important;
     }
 
-    .skills{
+    .section-heading {
+        margin-top: 0 !important;
+    }
+
+    .skills {
         padding-top: 1rem !important;
     }
 
-    .skills img{
-        width:20vw !important;
-        margin-left:0;
+    .skills img {
+        width: 20vw !important;
+        margin-left: 0;
         margin-bottom: 10%;
     }
 
@@ -577,28 +651,39 @@ section {
     .icon-cards {
         margin-left: 18vw !important;
     }
+
     .icon-cards__content img {
         width: 95vw !important;
         height: 29vh;
     }
 
-    .resume-click-icon{
-        top:42vh;
-        left:33vw;
+    .resume-click-icon {
+        top: 42vh;
+        left: 33vw;
     }
-    .resume-img-big{
-        left:0vw !important;
-        top:10vh;
+
+    .resume-img-big {
+        left: 0vw !important;
+        top: 10vh;
         width: 100vw !important;
         height: 70vh !important;
     }
 
+    .resume-download {
+        font-size: medium;
+        color: white;
+        position: absolute;
+        top: 10px;
+        left: 50vw;
+    }    
+
     .contacts .fa-linkedin {
-        margin-left:6vw !important;
-    } 
+        margin-left: 6vw !important;
+    }
+
     .contacts .fa-twitter {
-        margin-left:10vw !important;
-    } 
+        margin-left: 10vw !important;
+    }
 
     .page-5 p {
         font-size: 5vw;
@@ -607,11 +692,13 @@ section {
     .contacts span {
         opacity: 0 !important;
     }
+
     .contacts i {
         padding: 0 !important;
         font-size: 22vw !important;
     }
-    .copyright{
+
+    .copyright {
         margin-bottom: 3% !important;
     }
 }
