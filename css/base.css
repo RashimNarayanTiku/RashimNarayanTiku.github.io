@@ -670,6 +670,7 @@ section {
     }
 
     .resume-download {
+        font-size: xx-large;
         color: white;
         position: absolute;
         top: 10px;
