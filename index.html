@@ -13,16 +13,18 @@
     <meta name="author" content="Rashim Narayan Tiku" />
 
     <link rel="icon" type="image/gif" href="img/earth.ico"  />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href='./css/base.css'>
-
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha512-dLxUelApnYxpLt6K2iomGngnHO83iUvZytA3YjDUCjT0HDOHKXnVYdf3hU4JjM8uEhxf9nD1/ey98U3t2vZ0qQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
     <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/DRACOLoader.js"></script>
-    <script src="./particles.min.js"></script>
+    <script src="./main.js" defer></script> 
+    <script src="./particles.min.js" defer></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href='./css/base.css'>
 
   </head>
   <body>
@@ -30,7 +32,7 @@
     <div id='loader'>
         <div id='loader-content'>
             <div class='row'>
-                <img style="width:80px;" src='img/black_earth.gif'>
+                <img style="width:80px;" src='img/black_earth.gif' loading="eager">
             </div>
             <div class='row'>
                 <span id='loading-text' style="font-family:Impact, fantasy, Haettenschweiler, 'Arial Narrow Bold', sans-serif; margin-top:1.5%;">&nbsp;Loading...</span>
@@ -116,13 +118,13 @@
                         <figure class="icon-cards">
                             <div class="icon-cards__content" style="border-radius: 30px;">
                                 <div class="icon-cards__item d-flex align-items-center justify-content-center">
-                                    <a target="_blank" href='https://www.github.com/rashimnarayantiku/instagram' style='z-index:10000'><img src="./img/instagram.png" alt="Instagram" loading="lazy" /></a>
+                                    <a target="_blank" href='https://www.github.com/rashimnarayantiku/instagram' style='z-index:10000'><img src="./img/instagram.png" alt="Instagram project" loading="lazy" /></a>
                                 </div>
                                 <div class="icon-cards__item d-flex align-items-center justify-content-center">
-                                    <a target="_blank" href='https://www.github.com/rashimnarayantiku/tanksgame' style='z-index:10000'><img src="./img/tanks.png" alt="Tank Game" loading="lazy"/></a>
+                                    <a target="_blank" href='https://www.github.com/rashimnarayantiku/tanksgame' style='z-index:10000'><img src="./img/tanks.png" alt="Tank Game project" loading="lazy"/></a>
                                 </div>
                                 <div class="icon-cards__item d-flex align-items-center justify-content-center">
-                                    <a target="_blank" href='https://www.github.com/rashimnarayantiku/texto' style='z-index:10000'><img src="./img/texto.png" alt="Texto text editor" loading="lazy"/></a>
+                                    <a target="_blank" href='https://www.github.com/rashimnarayantiku/texto' style='z-index:10000'><img src="./img/texto.png" alt="Texto text editor project" loading="lazy"/></a>
                                 </div>
                             </div>
                         </figure>  
@@ -136,7 +138,7 @@
             <div class='page page-4 fade'>
                 <div class='row'>
                     <div class='big-resume-container'>
-                        <img class="resume-img-big" src='./img/resume.jpg' alt='resume'>
+                        <img class="resume-img-big" src='./img/resume.jpg' alt='Resume' loading="lazy">
                         <a target="_blank" href = 'https://tinyurl.com/rashim1234'>
                             <i class="resume-download fa fa-download fa-lg" aria-hidden="true" ></i>
                         </a>
@@ -145,8 +147,8 @@
                         <div class="section-title">
                             <h2>Resume</h2>
                         </div> 
-                        <img class='resume-img' src='./img/resume.jpg' alt='resume'>
-                        <img class="resume-click-icon" src="./img/click.png">
+                        <img class='resume-img' src='./img/resume.jpg' alt="Blurred Resume" loading="lazy">
+                        <img class="resume-click-icon" src="./img/click.png" width="50" height="50" alt="Click the resume to open it." loading="lazy">
                     </section>
                 </div>
             </div>
@@ -184,6 +186,5 @@
             </footer>
         </div>
     </main>
-    <script src="./main.js"></script> 
   </body>
 </html>

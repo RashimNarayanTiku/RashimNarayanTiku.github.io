@@ -24,11 +24,6 @@
 }
 
 @font-face {
-    font-family: monospaceFont;
-    src: url(Cousine-Regular.ttf);
-}
-
-@font-face {
     font-family: firaCodeFont;
     src: url(FiraCode-Regular.woff);
 }
@@ -340,7 +335,7 @@ section {
 }
 
 .section-heading {
-    font-family: "monospaceFont", sans-serif;
+    font-family: monospace, sans-serif;
     font-size: 1.4em;
     color: rgb(196, 196, 196);
     margin-top: 5%;
@@ -390,7 +385,6 @@ section {
     position: absolute;
     top: 50vh;
     left: 35vw;
-    width: 50px !important;
 }
 
 .big-resume-container {
@@ -402,6 +396,10 @@ section {
     background-color: rgba(0, 0, 0, 0.512);
     height: 100vh;
     width: 100vw;
+}
+
+#resume {
+    position: fixed;
 }
 
 .resume-img-big {
@@ -449,13 +447,13 @@ section {
 }
 
 #contact-box {
-    font-family: "monospaceFont", sans-serif;
+    font-family: monospace, sans-serif;
 }
 
 .copyright {
     display: flex;
     justify-content: center;
-    font-family: "monospaceFont", sans-serif;
+    font-family: monospace, sans-serif;
     font-size: 85%;
     width: 100vw;
     color: grey;
