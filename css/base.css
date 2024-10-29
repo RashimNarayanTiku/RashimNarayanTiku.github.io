@@ -374,7 +374,7 @@ section {
     top: 30vh;
     left: 27vw;
     width: 21vw;
-    filter: blur(0.6px);
+    filter: blur(0.5px);
 }
 
 .resume-img:hover {
@@ -388,8 +388,8 @@ section {
 }
 
 .big-resume-container {
-    display: none;
-    position: fixed;
+    visibility: hidden;
+    position: relative;
     top: 0;
     left: 0;
     z-index: 2000;

@@ -376,14 +376,15 @@ const resumeAnimation = () => {
   $('.big-resume-container').on('click', function() {
     $(this).fadeTo(500,0);
     setTimeout(() => {
-      this.style.display = 'none';
+      this.style.visibility = 'hidden';
       document.getElementsByTagName('body')[0].style.overflowY = "scroll";
     }, 500);
   });
   $('#resume').on('click', function(){
     document.getElementsByTagName('body')[0].style.overflowY = "hidden";
-    $('.big-resume-container').css('opacity',0);
-    $('.big-resume-container').css('display','block');
+    $('.big-resume-container').css('opacity', 0);
+    $('.big-resume-container').css('visibility','visible');
+    $('.big-resume-container').css('position','fixed');
     $('.big-resume-container').fadeTo(500,1);
   });
 }
