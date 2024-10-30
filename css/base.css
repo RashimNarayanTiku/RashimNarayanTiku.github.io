@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
-
 .cursor-star {
     position: fixed;
     background-color: rgb(255, 255, 255);
@@ -141,7 +139,6 @@ main {
     z-index: -1;
 }
 
-
 /* Projects Carousel */
 .icon-cards {
     position: relative;
@@ -234,16 +231,19 @@ main {
     height: 100vh;
 }
 
-#loader-content {
+#loader__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5%;
     position: absolute;
     top: 35%;
     width: 100vw;
+    font-size: 130%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-#loader-content>* {
-    font-size: 130%;
-    margin-left: 46vw;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+#loader__content .row {
+    justify-content: center;
 }
 
 .page {
@@ -251,7 +251,6 @@ main {
     margin-bottom: 150vh;
     z-index: inherit;
 }
-
 
 
 /* First Page Section */
@@ -352,7 +351,7 @@ section {
 #name {
     color: rgb(26, 26, 26);
     background-color: rgb(223, 219, 219);
-    font-family: 'Oswald', Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-transform: uppercase;
     font-weight: 500;
     letter-spacing: 0.02em;
@@ -556,18 +555,18 @@ section {
         margin-right: 0 !important;
     }
 
-    #loader-content {
+    #loader__content {
         top: 40vh;
         width: 100vw;
     }
 
-    #loader-content>* {
+    #loader__content>* {
         font-size: 130%;
         margin-left: 37vw;
         white-space: pre-line;
     }
 
-    #loader-content img {
+    #loader__content img {
         width: 30% !important;
         margin-left: 2.5vw !important;
     }

@@ -12,30 +12,29 @@
     <meta name="description" property="og:description" content="Rashim Narayan Tiku's Portfolio" />
     <meta name="author" content="Rashim Narayan Tiku" />
 
-    <link rel="icon" type="image/gif" href="img/earth.ico"  />
-    
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha512-dLxUelApnYxpLt6K2iomGngnHO83iUvZytA3YjDUCjT0HDOHKXnVYdf3hU4JjM8uEhxf9nD1/ey98U3t2vZ0qQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
-    <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/DRACOLoader.js"></script>
-    <script src="./main.js" defer></script> 
-    <script src="./particles.min.js" defer></script>
-
+    <link rel="icon" type="image/gif" href="img/earth.ico" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href='./css/base.css'>
+    
+    <script src="./preload.js" type="module" async></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha512-dLxUelApnYxpLt6K2iomGngnHO83iUvZytA3YjDUCjT0HDOHKXnVYdf3hU4JjM8uEhxf9nD1/ey98U3t2vZ0qQ==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/GLTFLoader.js" defer></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/DRACOLoader.js" defer></script>
+    <script src="./main.js" type="module" defer></script> 
+    <script src="./particles.min.js" defer></script>
+
 
   </head>
   <body>
-
     <div id='loader'>
-        <div id='loader-content'>
-            <div class='row'>
-                <img style="width:80px;" src='img/black_earth.gif' loading="eager">
+        <div id='loader__content'>
+            <div class='row loader__image__container'>
+                <img class="loader__image" style="width:80px;" src='img/black_earth.gif' loading="eager">
             </div>
-            <div class='row'>
-                <span id='loading-text' style="font-family:Impact, fantasy, Haettenschweiler, 'Arial Narrow Bold', sans-serif; margin-top:1.5%;">&nbsp;Loading...</span>
+            <div class='row loader__text__container'>
+                <span class='loader__text'>Loading...</span>
             </div>
         </div>
     </div>
