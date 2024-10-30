@@ -239,7 +239,8 @@ main {
     top: 35%;
     width: 100vw;
     font-size: 130%;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
 }
 
 #loader__content .row {
@@ -553,22 +554,6 @@ section {
 
     .row {
         margin-right: 0 !important;
-    }
-
-    #loader__content {
-        top: 40vh;
-        width: 100vw;
-    }
-
-    #loader__content>* {
-        font-size: 130%;
-        margin-left: 37vw;
-        white-space: pre-line;
-    }
-
-    #loader__content img {
-        width: 30% !important;
-        margin-left: 2.5vw !important;
     }
 
     #scroll-down-indicator {
