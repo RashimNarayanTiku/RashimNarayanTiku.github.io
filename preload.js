@@ -14,7 +14,7 @@ function CPUSpeedTest() {
   calculation(); 
   const end = performance.now(); 
   const duration = end - start; 
-  if (duration > 120) { 
+  if (duration > 85) { 
     console.log('Slow CPU speed detected, switching off some animations.');
     return true
   }
