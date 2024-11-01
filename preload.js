@@ -1,8 +1,32 @@
 export const isScreenSmall = window.innerWidth <= 576;
 export const canTestSpeed = navigator.connection && navigator.connection.downlink;
-export let highBandwidth = false; 
-if(canTestSpeed && navigator.connection.downlink > 5) {
+export const slowCPU = CPUSpeedTest();
+export let highBandwidth = false;
+
+function CPUSpeedTest() {
+  const calculation = () => { 
+    let sum = 0; 
+    for (let i = 0; i < 1e7; i++) { 
+      sum += Math.sqrt(i); 
+    } return sum; 
+  }; 
+  const start = performance.now(); 
+  calculation(); 
+  const end = performance.now(); 
+  const duration = end - start; 
+  if (duration > 120) { 
+    console.log('Slow CPU speed detected, switching off some animations.');
+    return true
+  }
+  return false
+}
+
+if(!canTestSpeed) {
+  console.log('Unable to test network speed, smaller 3D model will be shown by default.');
+} else if(navigator.connection.downlink > 5) {
   highBandwidth = true;
+} else {
+  console.log('Slow network speed detected, showing smaller 3D model.');
 }
 
 export let cachedSaturnModel = null;

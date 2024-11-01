@@ -1,4 +1,4 @@
-import { cachedSaturnModel, isScreenSmall } from "./preload.js";
+import { cachedSaturnModel, isScreenSmall, slowCPU } from "./preload.js";
 
 // Renderer, Scene, Camera, Light
 const renderer = new THREE.WebGL1Renderer({ canvas: document.querySelector('#bg') });
@@ -12,7 +12,8 @@ pointLight.position.set(20, 23, 12);
 scene.add(pointLight);
 
 // Make Cursor with stars
-const makeCursor = () => {
+const makeStarCursor = () => {
+  document.body.style.cursor = 'none';
   let mouseX = 0;
   let mouseY = 0;
 
@@ -180,19 +181,19 @@ const fadeEffect = () => {
 
       //object above the view
       if (objectTop < windowBottom && objectBottom < windowTop) {
-        if ($(this).css("opacity") == 1) $(this).fadeTo(100, 0);
+        if ($(this).css("opacity") == 1) fadeEffectHandler($(this), 100, 0);
         setTimeout(() => {
           this.querySelector('section').classList.remove('fixed-position');
         }, 200);
       }
       //object comes into view
       else if (objectTop < windowBottom) {
-        if ($(this).css("opacity") == 0) $(this).fadeTo(500, 1);
+        if ($(this).css("opacity") == 0) fadeEffectHandler($(this), 500, 1);
         this.querySelector('section').classList.add('fixed-position');
       }
       // object below the view
       else {
-        if ($(this).css("opacity") == 1) $(this).fadeTo(100, 0);
+        if ($(this).css("opacity") == 1) fadeEffectHandler($(this), 100, 0);
         setTimeout(() => {
           this.querySelector('section').classList.remove('fixed-position');
         }, 200);
@@ -363,10 +364,20 @@ const loadSaturn = async (callback) => {
   }, 500);
 }
 
+const fadeEffectHandler = (element, time, opacity) => {
+  if(!slowCPU) {
+    element.fadeTo(time, opacity);
+  } else {
+    element.css('opacity', opacity);
+  }
+}
+
 // Resume
 const resumeAnimation = () => {
-  $('.big-resume-container').on('click', function () {
-    $(this).fadeTo(500, 0);
+  const bigResumeContainer = $('.big-resume-container');
+
+  bigResumeContainer.on('click', function () {
+    fadeEffectHandler(bigResumeContainer, 500, 0);
     setTimeout(() => {
       this.style.visibility = 'hidden';
       document.getElementsByTagName('body')[0].style.overflowY = "scroll";
@@ -374,10 +385,10 @@ const resumeAnimation = () => {
   });
   $('#resume').on('click', function () {
     document.getElementsByTagName('body')[0].style.overflowY = "hidden";
-    $('.big-resume-container').css('opacity', 0);
-    $('.big-resume-container').css('visibility', 'visible');
-    $('.big-resume-container').css('position', 'fixed');
-    $('.big-resume-container').fadeTo(500, 1);
+    bigResumeContainer.css('opacity', 0);
+    bigResumeContainer.css('visibility', 'visible');
+    bigResumeContainer.css('position', 'fixed');
+    fadeEffectHandler(bigResumeContainer, 500, 1);
   });
 }
 
@@ -407,8 +418,8 @@ $(() => {
     pathCurveList[1] = new THREE.Vector3(-30, 2, 220);
   }
 
-  if (!isScreenSmall) {
-    makeCursor();
+  if (!isScreenSmall && !slowCPU) {
+    makeStarCursor();
   }
 
   loadSaturn(() => {

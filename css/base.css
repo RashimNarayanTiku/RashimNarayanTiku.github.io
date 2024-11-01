@@ -34,7 +34,6 @@ html {
     scroll-behavior: smooth;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    cursor: none;
 }
 
 html::-webkit-scrollbar {
