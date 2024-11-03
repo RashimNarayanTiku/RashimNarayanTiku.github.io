@@ -62,15 +62,6 @@ const makeStarCursor = () => {
   setInterval(createCursorStar, 18);
 }
 
-// Dynamic Window Size Updation
-window.addEventListener('resize', onWindowResize, false)
-function onWindowResize() {
-  camera.aspect = window.innerWidth / window.innerHeight
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight)
-  renderer.render(scene, camera);
-}
-
 // Adding Hollow Sphere of Stars
 let sphere;
 const v = new THREE.Vector3();
