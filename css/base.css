@@ -275,25 +275,25 @@ main {
     font-weight: bold;
     padding-top: 20vh;
     margin-bottom: -2%;
-    margin-left: -15px;
 }
 
 #type-writer {
-    padding-right: 0;
+    padding-left: 15px;
     font-size: 196%;
     color: black;
     font-weight: bolder;
     border-right: 3px solid black;
+
 }
 
 .social-links {
     padding: 0;
     list-style-type: none;
-    /* margin-left: -25px; */
+    padding-left: 8px;
 }
 
 .social {
-    font-size: 120% !important;
+    font-size: 130%;
     margin-left: 0.6%;
     float: left;
 }
@@ -305,7 +305,7 @@ main {
 #page-1-line {
     margin-top: 5%;
     margin-left: -15px;
-    width: 90%;
+    width: 80%;
     border-bottom: 5px solid black;
 }
 
@@ -314,7 +314,7 @@ main {
 }
 
 section {
-    margin: 0 auto !important;
+    margin: 0 auto;
     width: 75vw;
     height: 100vh;
 }
@@ -337,7 +337,7 @@ section {
     text-transform: uppercase;
     text-shadow: -1px -1px 0 #808080, 1px -1px 0 #808080, -1px 1px 0 #808080, 1px 1px 0 #808080;
     letter-spacing: -16.5px;
-    margin-top: 3% !important;
+    margin-top: 3%;
 }
 
 .section-heading {
@@ -479,24 +479,24 @@ section {
 @media (max-width: 768px) {
 
     section {
-        width: 80vw !important;
+        width: 80vw;
     }
 
     .name-heading {
-        font-size: 28vw !important;
+        font-size: 28vw;
     }
 
     #type-writer {
-        font-size: 5vw !important;
+        font-size: 5vw;
     }
 
     .social {
-        font-size: 4vw !important;
+        font-size: 4vw;
         margin-left: 2%;
     }
 
     #page-1-line {
-        margin-top: 10vw !important;
+        margin-top: 10vw;
         margin-left: -20px;
         width: 90%;
     }
@@ -520,7 +520,7 @@ section {
 
     .section-title h2 {
         font-size: 18vw;
-        margin-top: 10vw !important;
+        margin-top: 10vw;
         margin-left: -6vw;
     }
 
@@ -584,20 +584,20 @@ section {
     }
 
     section {
-        width: 85vw !important
+        width: 85vw;
     }
 
     .section-title h2 {
-        font-size: 20vw !important;
+        font-size: 20vw;
         letter-spacing: -11px;
-        margin-top: 15vw !important;
+        margin-top: 15vw;
     }
 
     .name-heading {
-        font-size: 30vw !important;
+        font-size: 30vw;
         margin-top: 10vw;
-        margin-right: 0 !important;
-        padding-right: 0 !important;
+        margin-right: 0;
+        padding-right: 0;
     }
 
     #name {
@@ -606,16 +606,16 @@ section {
     }
 
     #type-writer {
-        font-size: 8.3vw !important;
+        font-size: 8.3vw;
     }
 
     .social {
-        font-size: 7vw !important;
+        font-size: 7vw;
         margin-left: 2%;
     }
 
     #page-1-line {
-        margin-top: 15vw !important;
+        margin-top: 15vw;
         margin-left: -17px;
         width: 95%;
     }
