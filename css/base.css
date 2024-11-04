@@ -356,15 +356,12 @@ section {
 }
 
 #name {
-    color: rgb(26, 26, 26);
-    background-color: rgb(223, 219, 219);
-    font-family: Arial;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: -0.05em;
     font-size: 1.4em;
-    padding-right: 1%;
-    padding-left: 1%;
+    color: #000;
+    font-family: sans-serif;
+    font-weight: 1000;
+    text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
+    letter-spacing: 0px;
 }
 
 
