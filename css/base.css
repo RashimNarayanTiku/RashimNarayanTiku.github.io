@@ -278,24 +278,22 @@ main {
 }
 
 #type-writer {
-    padding-left: 15px;
     font-size: 196%;
     color: black;
     font-weight: bolder;
     border-right: 3px solid black;
-
+    padding-left: 1.5%;
 }
 
 .social-links {
-    padding: 0;
+    display: flex;
+    gap: 10%;
     list-style-type: none;
-    padding-left: 8px;
+    padding-left: 1.5%;
 }
 
 .social {
     font-size: 130%;
-    margin-left: 0.6%;
-    float: left;
 }
 
 .social i {
@@ -537,8 +535,8 @@ section {
     }
 
     .resume__img--big {
-        left: 0vw !important;
-        width: 100vw !important;
+        left: 0vw;
+        width: 100vw;
     }
 
     .page-5 p {
@@ -559,10 +557,6 @@ section {
 
 
 @media (max-width: 576px) {
-    .row {
-        margin-right: 0 !important;
-    }
-
     #scroll-down-indicator {
         border: 2px solid #000;
         top: 85%;
@@ -657,10 +651,10 @@ section {
     }
 
     .resume__img--big {
-        left: 0vw !important;
+        left: 0vw;
         top: 10vh;
-        width: 100vw !important;
-        height: 70vh !important;
+        width: 100vw;
+        height: 70vh;
     }
 
     .resume-download {
