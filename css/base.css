@@ -602,6 +602,10 @@ section {
         padding-right: 0 !important;
     }
 
+    #name {
+        font-size: 2em;
+    }
+
     #type-writer {
         font-size: 8.3vw !important;
     }
