@@ -362,7 +362,7 @@ section {
     font-family: sans-serif;
     font-weight: 1000;
     letter-spacing: 0px;
-    animation: flicker-animation 7s infinite;
+    animation: flicker-animation 6s infinite;
 }
 
 @keyframes flicker-animation {
