@@ -47,6 +47,10 @@ body {
     background-color: #000;
 }
 
+html, body {
+    overflow-x: hidden 
+}
+
 .row {
     padding: 0;
     margin: 0;
