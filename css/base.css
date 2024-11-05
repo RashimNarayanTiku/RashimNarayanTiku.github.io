@@ -588,10 +588,9 @@ section {
     }
 
     .name-heading {
-        font-size: 30vw;
+        font-size: 28vw;
         margin-top: 10vw;
-        margin-right: 0;
-        padding-right: 0;
+        margin-left: -2px;
     }
 
     #name {
