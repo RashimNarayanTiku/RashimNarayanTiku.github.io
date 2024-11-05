@@ -372,6 +372,9 @@ section {
         text-shadow: 2px 2px 0 #555555, 1px -1px 0 #555555, -1px 1px 0 #555555, 2px 2px 0 #555555;
     }
 }
+.skills {
+    padding-top: 3rem;
+}
 
 .skills img {
     padding-right: 2%;
@@ -444,7 +447,7 @@ section {
 }
 
 .contacts i {
-    font-size: 6.5vw !important;
+    font-size: 6.5vw;
 }
 
 .contacts {
@@ -470,7 +473,7 @@ section {
     width: 100vw;
     color: grey;
     background-color: transparent;
-    margin-bottom: 1% !important;
+    margin-bottom: 1%;
 }
 
 
@@ -500,7 +503,7 @@ section {
     }
 
     .section-content {
-        margin-top: 10vw !important;
+        margin-top: 10vw;
     }
 
     .skills img {
@@ -550,7 +553,7 @@ section {
     }
 
     .contacts i {
-        font-size: 15vw !important;
+        font-size: 15vw;
     }
 
 }
@@ -590,7 +593,7 @@ section {
     .name-heading {
         font-size: 28vw;
         margin-top: 10vw;
-        margin-left: -2px;
+        margin-left: -2.3%;
     }
 
     #name {
@@ -614,25 +617,25 @@ section {
     }
 
     .section-content {
-        margin-top: 0 !important;
+        margin-top: 0;
     }
 
     .section-heading {
-        margin-top: 0 !important;
+        margin-top: 0;
     }
 
     .skills {
-        padding-top: 1rem !important;
+        padding-top: 0.5rem;
     }
 
     .skills img {
-        width: 20vw !important;
+        width: 20vw;
         margin-left: 0;
         margin-bottom: 10%;
     }
 
     #typescript-skill {
-        width: 16vw !important;
+        width: 16vw;
     }
 
     .icon-cards {
@@ -665,11 +668,11 @@ section {
     }    
 
     .contacts .fa-linkedin {
-        margin-left: 6vw !important;
+        margin-left: 6vw;
     }
 
     .contacts .fa-twitter {
-        margin-left: 10vw !important;
+        margin-left: 10vw;
     }
 
     .page-5 p {
@@ -681,11 +684,11 @@ section {
     }
 
     .contacts i {
-        padding: 0 !important;
-        font-size: 22vw !important;
+        padding: 0;
+        font-size: 22vw;
     }
 
     .copyright {
-        margin-bottom: 3% !important;
+        margin-bottom: 3%;
     }
 }
