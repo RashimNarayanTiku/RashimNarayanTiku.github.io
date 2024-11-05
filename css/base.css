@@ -451,7 +451,7 @@ section {
 }
 
 .contacts i {
-    font-size: 6.5vw;
+    font-size: 6.5vw !important;
 }
 
 .contacts {
@@ -557,9 +557,8 @@ section {
     }
 
     .contacts i {
-        font-size: 15vw;
+        font-size: 15vw !important;
     }
-
 }
 
 
@@ -672,7 +671,7 @@ section {
     }    
 
     .contacts .fa-linkedin {
-        margin-left: 6vw;
+        margin-left: 6vw !important;
     }
 
     .contacts .fa-twitter {
@@ -688,8 +687,8 @@ section {
     }
 
     .contacts i {
-        padding: 0;
-        font-size: 22vw;
+        padding: 0 !important;
+        font-size: 22vw !important;
     }
 
     .copyright {
