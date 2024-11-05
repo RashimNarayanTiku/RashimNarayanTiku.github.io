@@ -297,7 +297,7 @@ main {
 }
 
 .social {
-    font-size: 130%;
+    font-size: 140%;
 }
 
 .social i {
@@ -597,7 +597,7 @@ section {
     .name-heading {
         font-size: 28vw;
         margin-top: 10vw;
-        margin-left: -2.3%;
+        margin-left: -1%;
     }
 
     #name {
