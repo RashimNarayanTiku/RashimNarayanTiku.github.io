@@ -3,31 +3,14 @@ import { cachedSaturnModel, isScreenSmall, slowCPU } from "./preload.js";
 // Renderer, Scene, Camera, Light
 const renderer = new THREE.WebGL1Renderer({ canvas: document.querySelector('#bg') });
 renderer.setPixelRatio(window.devicePixelRatio);
-renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setSize(window.outerWidth, window.outerHeight);
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const initialCameraZ = camera.position.z;
-const initialWindowHeight = window.innerHeight;
-
+const camera = new THREE.PerspectiveCamera(75, window.outerWidth / window.outerHeight, 0.1, 1000);
 camera.position.set(0, 2, 1200);
 const pointLight = new THREE.PointLight(0xffffff);
 pointLight.position.set(20, 23, 12);
 scene.add(pointLight);
 
-// Dynamic Window Size Updation
-window.addEventListener('resize', onWindowResize, false)
-function onWindowResize() {
-  camera.aspect = window.innerWidth / window.innerHeight
-
-  // Adjust camera position to maintain apparent size
-  // This assumes initial position was set for initial window size
-  const scale = window.innerHeight / initialWindowHeight;
-  camera.position.z = initialCameraZ * scale;
-
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.render(scene, camera);
-}
 // Make Cursor with stars
 const makeStarCursor = () => {
   document.body.style.cursor = 'none';
