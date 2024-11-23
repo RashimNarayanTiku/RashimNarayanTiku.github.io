@@ -480,6 +480,12 @@ section {
     margin-bottom: 1%;
 }
 
+/* For monitors and larger screens */
+@media (min-width: 1920px) {
+    html {
+        font-size: 130%;
+    }
+}
 
 @media (max-width: 768px) {
 
