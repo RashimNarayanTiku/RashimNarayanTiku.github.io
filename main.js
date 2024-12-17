@@ -1,5 +1,7 @@
 import { cachedSaturnModel, isScreenSmall, slowCPU } from "./preload.js";
 
+let oldHeight = window.outerHeight;
+
 // Renderer, Scene, Camera, Light
 const renderer = new THREE.WebGL1Renderer({ canvas: document.querySelector('#bg') });
 renderer.setPixelRatio(window.devicePixelRatio);
@@ -14,6 +16,9 @@ scene.add(pointLight);
 // Dynamic Window Size Updation
 window.addEventListener('resize', onWindowResize, false)
 function onWindowResize() {
+    if(oldHeight > window.innerHeight) return;
+
+    oldHeight = window.innerHeight;
     camera.aspect = window.outerWidth / window.outerHeight
     camera.updateProjectionMatrix();
     renderer.setSize(window.outerWidth, window.outerHeight)
