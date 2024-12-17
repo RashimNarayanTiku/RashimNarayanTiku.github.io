@@ -11,6 +11,15 @@ const pointLight = new THREE.PointLight(0xffffff);
 pointLight.position.set(20, 23, 12);
 scene.add(pointLight);
 
+// Dynamic Window Size Updation
+window.addEventListener('resize', onWindowResize, false)
+function onWindowResize() {
+    camera.aspect = window.innerWidth / window.innerHeight
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight)
+    renderer.render(scene, camera);   
+}
+
 // Make Cursor with stars
 const makeStarCursor = () => {
   document.body.style.cursor = 'none';
