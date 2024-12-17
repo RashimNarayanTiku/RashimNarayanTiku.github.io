@@ -395,7 +395,9 @@ const changeLoaderText = () => {
   }, 10 * 1000);
 
   setTimeout(() => {
-    loaderText.innerHTML = "Who wants ice-cream! 🍦";
+    const loaderImage = document.getElementsByClassName("loader__image")[0];
+    loaderImage.style.visibility = "hidden";
+    loaderText.innerHTML = "Something went wrong. Please reload the page.";
   }, 17 * 1000);
 }
 
