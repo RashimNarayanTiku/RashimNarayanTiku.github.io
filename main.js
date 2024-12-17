@@ -3,9 +3,9 @@ import { cachedSaturnModel, isScreenSmall, slowCPU } from "./preload.js";
 // Renderer, Scene, Camera, Light
 const renderer = new THREE.WebGL1Renderer({ canvas: document.querySelector('#bg') });
 renderer.setPixelRatio(window.devicePixelRatio);
-renderer.setSize(window.outerWidth, window.outerHeight);
+renderer.setSize(window.innerWidth, window.innerHeight);
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.outerWidth / window.outerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.set(0, 2, 1200);
 const pointLight = new THREE.PointLight(0xffffff);
 pointLight.position.set(20, 23, 12);
