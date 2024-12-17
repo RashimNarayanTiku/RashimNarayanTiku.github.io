@@ -14,9 +14,9 @@ scene.add(pointLight);
 // Dynamic Window Size Updation
 window.addEventListener('resize', onWindowResize, false)
 function onWindowResize() {
-    camera.aspect = window.innerWidth / window.innerHeight
+    camera.aspect = window.outerWidth / window.outerHeight
     camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight)
+    renderer.setSize(window.outerWidth, window.outerHeight)
     renderer.render(scene, camera);   
 }
 
