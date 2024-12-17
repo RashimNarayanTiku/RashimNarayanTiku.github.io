@@ -258,6 +258,9 @@ main {
     letter-spacing: -0.03em;
 }
 
+.loader__text {
+    text-align: center;
+}
 .page {
     height: 100vh !important;
     margin-bottom: 150vh;
