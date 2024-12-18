@@ -1,5 +1,8 @@
 import { cachedSaturnModel, isScreenSmall, slowCPU } from "./preload.js";
 
+// Faking fullscreen to hide address bar in mobile devices
+window.scrollTo(0, 1);
+
 let oldHeight = window.outerHeight;
 
 // Renderer, Scene, Camera, Light
