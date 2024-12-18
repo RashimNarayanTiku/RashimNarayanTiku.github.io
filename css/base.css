@@ -412,7 +412,7 @@ section {
     top: 30vh;
     left: 27vw;
     width: 21vw;
-    filter: blur(0.5px);
+    filter: blur(1px);
 }
 
 .resume__img:hover {
