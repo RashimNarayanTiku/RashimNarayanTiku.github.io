@@ -367,7 +367,7 @@ section {
     font-family: sans-serif;
     font-weight: 1000;
     letter-spacing: 0px;
-    animation: flicker-animation 6s infinite;
+    animation: flicker-animation 7s infinite alternate;
 }
 
 @keyframes flicker-animation {
@@ -380,10 +380,10 @@ section {
             2px 2px 0 #ffffffc0,
 
             /* glow */
-            2px 2px 6px #ffffff2d,
-            1px -1px 6px #ffffff2d,
-            -1px 1px 6px #ffffff2d,
-            2px 2px 6px #ffffff2d;
+            2px 2px 6px #ffffff25,
+            1px -1px 6px #ffffff25,
+            -1px 1px 6px #ffffff25,
+            2px 2px 6px #ffffff25;
 
     }
     20%, 24%, 26%, 53%, 55%, 99%, 100% {
