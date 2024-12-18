@@ -380,10 +380,10 @@ section {
             2px 2px 0 #ffffffc0,
 
             /* glow */
-            2px 2px 6px #ffffff66,
-            1px -1px 6px #ffffff66,
-            -1px 1px 6px #ffffff66,
-            2px 2px 6px #ffffff66;
+            2px 2px 5px #ffffff2d,
+            1px -1px 5px #ffffff2d,
+            -1px 1px 5px #ffffff2d,
+            2px 2px 5px #ffffff2d;
 
     }
     20%, 24%, 26%, 53%, 55%, 99%, 100% {
