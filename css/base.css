@@ -388,10 +388,10 @@ section {
     }
     20%, 24%, 26%, 53%, 55%, 99%, 100% {
         text-shadow:
-            2px 2px 0 #555555,
-            1px -1px 0 #555555,
-            -1px 1px 0 #555555,
-            2px 2px 0 #555555;
+            2px 2px 0 #4E4E4E,
+            1px -1px 0 #4E4E4E,
+            -1px 1px 0 #4E4E4E,
+            2px 2px 0 #4E4E4E;
     }
 }
 
