@@ -273,7 +273,7 @@ window.addEventListener('scroll', () => {
   dynamicColorChange();
 });
 
-const showScrollIndicatorOnScrollStop = (element, showScrollIndicator, timeout) => {
+const showScrollIndicatorOnScrollStop = (element, timeout) => {
   var handle = null;
   var onScroll = function () {
     if (handle) {
@@ -414,8 +414,8 @@ const changeLoaderText = () => {
   setTimeout(() => {
     const loaderImage = document.getElementsByClassName("loader__image")[0];
     loaderImage.style.visibility = "hidden";
-    loaderText.innerHTML = "Something went wrong. Please reload the page.";
-  }, 17 * 1000);
+    loaderText.innerHTML = "Something's taking too much time. Reloading the page might help.";
+  }, 20 * 1000);
 }
 
 $(() => {
@@ -449,7 +449,5 @@ $(() => {
   resumeAnimation();
   animate();
 
-  showScrollIndicatorOnScrollStop(window, () => {
-    showScrollIndicator();
-  });
+  showScrollIndicatorOnScrollStop(window);
 });
