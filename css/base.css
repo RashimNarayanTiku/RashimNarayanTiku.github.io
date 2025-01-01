@@ -74,16 +74,17 @@ html, body {
 }
 
 #scroll-down-indicator {
-    border: 2.5px solid #000 !important;
-    border-radius: 50px;
-    height: 3em;
-    width: 2em;
-    position: fixed;
     top: 90%;
-    left: 47%;
-    animation: animateScroll 1.5s linear infinite;
+    left: 50%;
+    width: 2em;
     opacity: 0;
+    height: 3em;
     z-index: 1500;
+    position: fixed;
+    border-radius: 50px;
+    transform: translate(-50%, -50%);
+    border: 2.5px solid #000 !important;
+    animation: animateScroll 1.5s linear infinite;
 
 }
 
@@ -412,11 +413,16 @@ section {
 
 
 /* Resume section */
+.resume-content {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10vh;
+}
+
 .resume__img {
-    position: absolute;
-    top: 30vh;
-    left: 27vw;
-    width: 21vw;
+    width: 30vh;
     filter: blur(1px);
 }
 
@@ -426,19 +432,17 @@ section {
 
 .resume__click-icon {
     position: absolute;
-    top: 50vh;
-    left: 35vw;
 }
 
 .big-resume-container {
-    visibility: hidden;
-    position: relative;
     top: 0;
     left: 0;
-    z-index: 2000;
-    background-color: rgba(0, 0, 0, 0.512);
-    height: 100vh;
     width: 100vw;
+    height: 100vh;
+    z-index: 2000;
+    position: relative;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.512);
 }
 
 #resume {
@@ -447,8 +451,8 @@ section {
 
 .resume__img--big {
     position: absolute;
-    left: 30vw;
     height: 100vh;
+    left: 30vw;
 }
 
 .resume-download {
@@ -559,13 +563,6 @@ section {
         margin-left: -6vw;
     }
 
-    /* Resume section */
-    .resume__img {
-        top: 35vh;
-        left: 20vw;
-        width: 40vw;
-    }
-
     .big-resume-container {
         height: 100vh;
         width: 100vw;
@@ -594,8 +591,8 @@ section {
 
 @media (max-width: 576px) {
     #scroll-down-indicator {
-        border: 2px solid #000;
         top: 85%;
+        border: 2px solid #000;
         animation: animateScroll2 1.5s linear infinite;
     }
 
@@ -678,11 +675,6 @@ section {
     .icon-cards__content img {
         width: 95vw !important;
         height: 29vh;
-    }
-
-    .resume__click-icon {
-        top: 42vh;
-        left: 33vw;
     }
 
     .resume__img--big {
