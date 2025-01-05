@@ -354,7 +354,7 @@ let saturn;
 const loadSaturn = async (callback) => {
   const loader = new THREE.GLTFLoader(); 
   const dracoLoader = new THREE.DRACOLoader(); 
-  dracoLoader.setDecoderPath('https://unpkg.com/three@0.128.0/examples/js/libs/draco/'); 
+  dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.7/'); 
   loader.setDRACOLoader(dracoLoader);
   loader.crossOrigin = true;
 
