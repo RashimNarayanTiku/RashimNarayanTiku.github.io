@@ -28,7 +28,6 @@
 
 *:focus {
     outline: none;
-    border-bottom: dotted grey 3px;
 }
 
 html {
@@ -509,13 +508,19 @@ section {
 }
 
 /* For monitors and larger screens */
-@media (min-width: 1920px) {
+@media only screen and (min-width: 1920px) {
     html {
         font-size: 130%;
     }
 }
 
-@media (max-width: 768px) {
+@media only screen and (min-width: 1024px) {
+    *:focus {
+        border-bottom: dotted grey 3px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
 
     section {
         width: 80vw;
@@ -588,8 +593,7 @@ section {
     }
 }
 
-
-@media (max-width: 576px) {
+@media only screen and (max-width: 576px) {
     #scroll-down-indicator {
         top: 85%;
         border: 2px solid #000;
