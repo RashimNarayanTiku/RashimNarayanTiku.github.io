@@ -382,6 +382,14 @@ const fadeEffectHandler = (element, time, opacity) => {
 
 // Resume
 const resumeAnimation = () => {
+  function openBigResume() {
+    document.getElementsByTagName('body')[0].style.overflowY = "hidden";
+    bigResumeContainer.css('opacity', 0);
+    bigResumeContainer.css('visibility', 'visible');
+    bigResumeContainer.css('position', 'fixed');
+    fadeEffectHandler(bigResumeContainer, 500, 1);
+ }
+
   const bigResumeContainer = $('.big-resume-container');
 
   bigResumeContainer.on('click', function () {
@@ -391,13 +399,8 @@ const resumeAnimation = () => {
       document.getElementsByTagName('body')[0].style.overflowY = "scroll";
     }, 500);
   });
-  $('.resume-content').on('click', function () {
-    document.getElementsByTagName('body')[0].style.overflowY = "hidden";
-    bigResumeContainer.css('opacity', 0);
-    bigResumeContainer.css('visibility', 'visible');
-    bigResumeContainer.css('position', 'fixed');
-    fadeEffectHandler(bigResumeContainer, 500, 1);
-  });
+    $('.resume__img').on('click', openBigResume);
+    $('.resume__click-icon').on('click', openBigResume);
 }
 
 //Loader text changes  
