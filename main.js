@@ -391,7 +391,7 @@ const resumeAnimation = () => {
       document.getElementsByTagName('body')[0].style.overflowY = "scroll";
     }, 500);
   });
-  $('.resume__img').on('click', function () {
+  $('.resume-content').on('click', function () {
     document.getElementsByTagName('body')[0].style.overflowY = "hidden";
     bigResumeContainer.css('opacity', 0);
     bigResumeContainer.css('visibility', 'visible');
