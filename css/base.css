@@ -28,6 +28,7 @@
 
 *:focus {
     outline: none;
+    border-bottom: dotted grey 3px;
 }
 
 html {
@@ -362,10 +363,10 @@ section {
     }
     20%, 24%, 26%, 53%, 55%, 99%, 100% {
         text-shadow:
-            2px 2px 0 #4E4E4E,
-            1px -1px 0 #4E4E4E,
-            -1px 1px 0 #4E4E4E,
-            2px 2px 0 #4E4E4E;
+            2px 2px 0 #4e4e4e,
+            1px -1px 0 #555555,
+            -1px 1px 0 #555555,
+            2px 2px 0 #555555;
     }
 }
 
@@ -377,7 +378,6 @@ section {
     padding-right: 2%;
     margin: 0 auto;
 }
-
 
 
 /* Resume section */
